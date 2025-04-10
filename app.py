@@ -53,6 +53,14 @@ with st.sidebar:
 
     # if st.button("Translate Code"):
     #     st.session_state.show_selectbox = True  # Hiển thị selectbox
+    if st.button("Readme generator"):
+        if function_input.strip():
+            try:
+                pass
+            except Exception as e:
+                st.error(f"Error: {str(e)}")
+        else:
+            st.warning("Please enter a Python function.")
 
     if "show_selectbox" not in st.session_state:
         st.session_state.show_selectbox = False
@@ -77,11 +85,26 @@ with st.sidebar:
 
 # Phần chính: Box output (nằm dưới box input)
 if "output_content" not in st.session_state:
-    st.session_state.output_content = ""
+    content = '''
+
+def add(a, b):
+    """Adds two numbers together.
+
+    Args:
+        a: The first number.
+        b: The second number.
+
+    Returns:
+        The sum of a and b.
+    """
+    return a + b
+
+'''
+    st.session_state.output_content = content
 if "output_language" not in st.session_state:
     st.session_state.output_language = "python"
 
-if st.session_state.output_content:
-    st.subheader("Result:")
-    language_map = {"C": "c", "C++": "cpp", "Javascript": "javascript", "python": "python"}
-    st.code(st.session_state.output_content, language=language_map.get(st.session_state.output_language, "python"))
+#if st.session_state.output_content:
+st.subheader("Result:")
+language_map = {"C": "c", "C++": "cpp", "Javascript": "javascript", "python": "python"}
+st.code(st.session_state.output_content, language=language_map.get(st.session_state.output_language, "python"))
