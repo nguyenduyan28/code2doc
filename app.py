@@ -2,6 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from readmegen_gemini import generate_readme_from_code
 
 # Load API key từ .env
 load_dotenv()
@@ -56,7 +57,9 @@ with st.sidebar:
     if st.button("Readme generator"):
         if function_input.strip():
             try:
-                pass
+                read_me_content = generate_readme_from_code(function_input)
+                st.session_state.output_content = read_me_content
+                st.session_state.output_language = "markdown"
             except Exception as e:
                 st.error(f"Error: {str(e)}")
         else:
