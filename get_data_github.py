@@ -1,35 +1,115 @@
 import requests
 import os
+from git import Repo
 from dotenv import load_dotenv
-
-def get_repo_data(url, prefix=""):
-    try:
-        headers = {"Authorization": f"token {os.getenv('ACCESS_TOKEN')}"}
-        user, repo = url.split('/')[-2], url.split('/')[-1]
-        repo_url = f"https://api.github.com/repos/{user}/{repo}/contents{prefix}"
-        response = requests.get(repo_url, headers=headers)
-        files = response.json()
-        
-        if not isinstance(files, list):
-            return "Error: Unable to fetch repo contents, please check the URL or rate limits"
-    except Exception as e:
-        return f"Error: Invalid URL or request failed - {str(e)}"
-
+import timeit
+import ast
+import json
+from collections import defaultdict
+def get_repo_data(url, local_dirs = './repo'):
+    allowed_list = ['py', 'cpp', 'html', 'css', 'js']
     content = ""
-    # Các định dạng file cần lấy
-    allowed_extensions = ['html', 'css', 'js', 'cpp', 'c', 'py']
-
-    for file in files:
-        if file["type"] == "file":
-            # Lấy phần mở rộng của file
-            file_extension = file['name'].split('.')[-1]
-            if file_extension in allowed_extensions:
-                content += 'BEGINFILE ' + file['path'] + '\n'  # Dùng file['path'] để hiển thị đường dẫn đầy đủ
-                content += requests.get(file["download_url"]).text
-                content += '\nENDFILE\n'
-        elif file["type"] == "dir":
-            # Nếu là thư mục, gọi đệ quy với đường dẫn mới
-            subdir_content = get_repo_data(url, prefix="/" + file["path"])
-            content += subdir_content
-
+    if (not os.path.exists(local_dirs)):
+        Repo.clone_from(url, local_dirs, depth = 1)
+    for root, dirs, files in os.walk(local_dirs):
+        for file in files:
+            if file.split('.')[-1] in allowed_list and not file.startswith('__'):
+                filename = os.path.join(root, file)
+                with open(filename, 'r') as f:
+                    content += f'BEGINFILE f{filename}\n{f.read()}ENDFILE\n' 
     return content
+
+
+
+import ast
+import os
+import json
+from collections import defaultdict
+from git import Repo
+
+def get_repo_class(url, local_dirs='./repo'):
+    local_dirs = './' + url.split('/')[-1].split('.')[0]
+    allowed_list = ['py']
+    list_of_classes = []
+    class_names = set()
+
+    if not os.path.exists(local_dirs): 
+        Repo.clone_from(url, local_dirs, depth=1)
+
+    for root, dirs, files in os.walk(local_dirs):
+        for file in files:
+            if file.split('.')[-1] in allowed_list and not file.startswith('__'):
+                filename = os.path.join(root, file)
+                with open(filename, 'r') as f:
+                    try:
+                        tree = ast.parse(f.read())
+                    except SyntaxError:
+                        continue
+
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.ClassDef):
+                        class_name = node.name
+                        class_names.add(class_name)
+
+    for root, dirs, files in os.walk(local_dirs):
+        for file in files:
+            if file.split('.')[-1] in allowed_list and not file.startswith('__'):
+                filename = os.path.join(root, file)
+                with open(filename, 'r') as f:
+                    try:
+                        tree = ast.parse(f.read())
+                    except SyntaxError:
+                        continue
+
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.ClassDef):
+                        class_name = node.name
+                        inherits = [base.id for base in node.bases if isinstance(base, ast.Name)]
+                        methods = []
+                        attributes = set()
+                        dependencies = set()
+
+                        for n in node.body:
+                            if isinstance(n, ast.FunctionDef):
+                                method_name = n.name
+                                methods.append(method_name)
+
+                                for arg in ast.walk(n):
+                                    if isinstance(arg, ast.Name) and arg.id in class_names and arg.id != class_name:
+                                        dependencies.add(arg.id)
+
+                            if isinstance(n, ast.FunctionDef) and n.name == '__init__':
+                                for stmt in n.body:
+                                    if isinstance(stmt, ast.Assign):
+                                        for target in stmt.targets:
+                                            if isinstance(target, ast.Attribute) and isinstance(target.value, ast.Name) and target.value.id == 'self':
+                                                attributes.add(target.attr)
+
+                                                # Check if value is instantiating another class
+                                                if isinstance(stmt.value, ast.Call) and isinstance(stmt.value.func, ast.Name):
+                                                    if stmt.value.func.id in class_names:
+                                                        dependencies.add(stmt.value.func.id)
+
+                        list_of_classes.append({
+                            "name": class_name,
+                            "inherits": inherits,
+                            "attributes": list(attributes),
+                            "methods": methods,
+                            "dependencies": list(dependencies)
+                        })
+
+    with open('class_list_enhanced.json', 'w') as f:
+        json.dump(list_of_classes, f, indent=2)
+
+    return list_of_classes
+
+
+
+        
+
+
+    
+
+
+
+    

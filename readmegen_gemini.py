@@ -2,7 +2,8 @@ import google.generativeai as genai
 # import os
 # import re
 genai.configure(api_key="")
-model = genai.GenerativeModel("gemini-2.0-flash")
+import json
+model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 def clean_readme_output(text: str) -> str:
     lines = text.strip().splitlines()
@@ -72,5 +73,40 @@ Here is the code:
         docstring = response.text.strip().strip('"').strip("'")
         docstring = clean_readme_output(docstring)
         return f'{docstring}'
+    except Exception as e:
+        return f'"""[ERROR generating docstring: {str(e)}]"""'
+
+def generate_class_diagram(code):
+    with open('class_list_enhanced.json', 'r') as f:
+        data = json.load(f)
+    prompt = f'''
+I have a list of Python classes in JSON format. Each class includes:
+- "name": class name
+- "attributes": list of attribute names
+- "methods": list of method names
+- "inherits": list of base classes (optional)
+- "dependencies": list of classes used (optional)
+
+Please generate a PlantUML class diagram using the following rules:
+- Use `class` blocks to define classes.
+- Show attributes as `-attrName: type` if known.
+- Show methods as `+methodName(params): returnType` if known.
+- Use `A <|-- B` to show inheritance (B inherits A)
+- Use `A ..> B` for dependencies (A uses B)
+- Use `A --> B` for composition (A has B as member)
+- Only return PlantUML code inside `@startuml` to `@enduml`, no explanations.
+
+Here is the JSON:
+```json
+<PASTE YOUR JSON HERE>
+
+
+{data}
+    '''
+    try:
+        response = model.generate_content(prompt)
+        mermaid_class_code = response.text.strip().strip('"').strip("'")
+        mermaid_class_code = clean_readme_output(mermaid_class_code)
+        return f'{mermaid_class_code}'
     except Exception as e:
         return f'"""[ERROR generating docstring: {str(e)}]"""'

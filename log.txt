@@ -1,0 +1,845 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.2.6:8501
+
+@startuml
+class PrefixPathMiddleware {
+    - prefix
+    - app
+    + __init__()
+    + __call__()
+}
+class MyException {
+}
+class ForbiddenSubclass {
+}
+class E1 {
+}
+class E2 {
+}
+class E3 {
+}
+class View {
+    + __init__()
+    + index()
+}
+class ListConverter {
+    + to_python()
+    + to_url()
+}
+class ContextConverter {
+    + to_python()
+}
+class AppError {
+}
+class BlueprintError {
+}
+class AsyncView {
+}
+class AsyncMethodView {
+}
+class MySessionInterface {
+    + save_session()
+    + open_session()
+}
+class Index {
+    + dispatch_request()
+}
+class Index {
+    + get()
+    + post()
+}
+class Other {
+    + get()
+    + post()
+}
+class BetterIndex {
+    + delete()
+}
+class Index {
+    + dispatch_request()
+}
+class Index1 {
+    + dispatch_request()
+}
+class Index2 {
+    + dispatch_request()
+}
+class Index3 {
+    + dispatch_request()
+}
+class Index {
+    + get()
+}
+class Index {
+    + get()
+    + head()
+}
+class Index {
+    + dispatch_request()
+}
+class BaseView {
+}
+class ChildView {
+    + get()
+    + propfind()
+}
+class GetView {
+    + get()
+}
+class DeleteView {
+    + delete()
+}
+class GetDeleteView {
+}
+class GetView {
+    + get()
+}
+class OtherView {
+    + post()
+}
+class View {
+}
+class CountInit {
+    + __init__()
+    + dispatch_request()
+}
+class TagDict {
+}
+class Foo {
+    - data
+    + __init__()
+}
+class TagFoo {
+    + check()
+    + to_json()
+    + to_python()
+}
+class Tag1 {
+}
+class Tag2 {
+}
+class SuppressedFlask {
+    + log_exception()
+}
+class TestGreenletContextCopying {
+    + test_greenlet_context_copying()
+    + test_greenlet_context_copying_api()
+}
+class SessionError {
+}
+class FailingSessionInterface {
+    + open_session()
+}
+class CustomFlask {
+}
+class PathAwareSessionInterface {
+    + get_cookie_name()
+}
+class CustomFlask {
+}
+class MyDecoratorException {
+}
+class MyFunctionException {
+}
+class MyBlueprint {
+    + get_send_file_max_age()
+}
+class Base {
+}
+class Test {
+}
+class Config {
+}
+class Flask {
+}
+class TestGenericHandlers {
+    + app()
+    + report_error()
+    + test_handle_class_or_code()
+    + test_handle_generic_http()
+    + test_handle_generic()
+}
+class CustomException {
+}
+class ParentException {
+}
+class ChildExceptionUnregistered {
+}
+class ChildExceptionRegistered {
+}
+class ForbiddenSubclassRegistered {
+}
+class ForbiddenSubclassUnregistered {
+}
+class Custom {
+}
+class FakePath {
+    - path
+    + __init__()
+    + __fspath__()
+}
+class PyBytesIO {
+    - _io
+    + __init__()
+    + __getattr__()
+}
+class TestSendfile {
+    + test_send_file()
+    + test_static_file()
+    + test_send_from_directory()
+}
+class TestUrlFor {
+    + test_url_for_with_anchor()
+    + test_url_for_with_scheme()
+    + test_url_for_with_scheme_not_external()
+    + test_url_for_with_alternating_schemes()
+    + test_url_with_method()
+    + test_url_for_with_self()
+}
+class TestNoImports {
+    + test_name_with_import_error()
+}
+class TestStreaming {
+    + test_streaming_with_context()
+    + test_streaming_with_context_as_decorator()
+    + test_streaming_with_context_and_custom_close()
+    + test_stream_keeps_session()
+}
+class TestHelpers {
+    + test_get_debug_flag()
+    + test_make_response()
+}
+class MyAborter {
+}
+class MyFlask {
+}
+class My900Error {
+}
+class StaticFileApp {
+    + get_send_file_max_age()
+}
+class MyView {
+    + get()
+    + post()
+}
+class Wrapper {
+    - _gen
+    + __init__()
+    + __iter__()
+    + close()
+    + __next__()
+}
+class FixedOffset {
+    - __offset
+    - __name
+    + __init__()
+    + utcoffset()
+    + tzname()
+    + dst()
+}
+class X {
+    - val
+    + __init__()
+}
+class CustomProvider {
+    + object_hook()
+    + loads()
+}
+class ObjectWithHTML {
+    + __html__()
+}
+class TestRoutes {
+    + app()
+    + invoke()
+    + expect_order()
+    + test_simple()
+    + test_sort()
+    + test_all_methods()
+    + test_no_routes()
+    + test_subdomain()
+    + test_host()
+}
+class Module {
+}
+class Module {
+}
+class Module {
+}
+class Module {
+    + create_app()
+}
+class Module {
+    + create_app()
+}
+class Module {
+    + make_app()
+}
+class Module {
+    + create_app()
+}
+class Module {
+    + create_app()
+}
+class Module {
+}
+class Module {
+}
+class Module {
+    + create_app()
+}
+class Module {
+    + create_app()
+}
+class MockCtx {
+    + exit()
+}
+class MyFlask {
+    + create_global_jinja_loader()
+}
+class _TestHandler {
+    + handle()
+}
+class CustomEnvironment {
+}
+class CustomFlask {
+}
+class CustomRequestGlobals {
+    - spam
+    + __init__()
+}
+class Foo {
+}
+class Namespace {
+    + add()
+}
+class SubRunner {
+}
+class NS {
+}
+class StatusJSON {
+}
+class RenderTemplateView {
+    - template_name
+    + __init__()
+    + dispatch_request()
+}
+class AuthActions {
+    - _client
+    + __init__()
+    + login()
+    + logout()
+}
+class Recorder {
+}
+class SessionMixin {
+    + permanent()
+    + permanent()
+}
+class SecureCookieSession {
+    + __init__()
+    + __getitem__()
+    + get()
+    + setdefault()
+}
+class NullSession {
+    + _fail()
+}
+class SessionInterface {
+    + make_null_session()
+    + is_null_session()
+    + get_cookie_name()
+    + get_cookie_domain()
+    + get_cookie_path()
+    + get_cookie_httponly()
+    + get_cookie_secure()
+    + get_cookie_samesite()
+    + get_cookie_partitioned()
+    + get_expiration_time()
+    + should_set_cookie()
+    + open_session()
+    + save_session()
+}
+class SecureCookieSessionInterface {
+    + get_signing_serializer()
+    + open_session()
+    + save_session()
+}
+class ConfigAttribute {
+    - get_converter
+    - __name__
+    + __init__()
+    + __get__()
+    + __get__()
+    + __get__()
+    + __set__()
+}
+class Config {
+    - root_path
+    + __init__()
+    + from_envvar()
+    + from_prefixed_env()
+    + from_pyfile()
+    + from_object()
+    + from_file()
+    + from_mapping()
+    + get_namespace()
+    + __repr__()
+}
+class Environment {
+    - app
+    + __init__()
+}
+class DispatchingJinjaLoader {
+    - app
+    + __init__()
+    + get_source()
+    + _get_source_explained()
+    + _get_source_fast()
+    + _iter_loaders()
+    + list_templates()
+}
+class Blueprint {
+    - cli
+    + __init__()
+    + get_send_file_max_age()
+    + send_static_file()
+    + open_resource()
+}
+class NoAppException {
+}
+class ScriptInfo {
+    - create_app
+    - set_debug_flag
+    - app_import_path
+    - load_dotenv_defaults
+    + __init__()
+    + load_app()
+}
+class AppGroup {
+    + command()
+    + group()
+}
+class FlaskGroup {
+    - create_app
+    - set_debug_flag
+    - _loaded_plugin_commands
+    + __init__()
+    + _load_plugin_commands()
+    + get_command()
+    + list_commands()
+    + make_context()
+    + parse_args()
+}
+class CertParamType {
+    - path_type
+    + __init__()
+    + convert()
+}
+class SeparatedPathType {
+    + convert()
+}
+class Request {
+    + max_content_length()
+    + max_content_length()
+    + max_form_memory_size()
+    + max_form_memory_size()
+    + max_form_parts()
+    + max_form_parts()
+    + endpoint()
+    + blueprint()
+    + blueprints()
+    + _load_form_data()
+    + on_json_loading_failed()
+}
+class Response {
+    + max_cookie_size()
+}
+class Flask {
+    - cli
+    + __init__()
+    + get_send_file_max_age()
+    + send_static_file()
+    + open_resource()
+    + open_instance_resource()
+    + create_jinja_environment()
+    + create_url_adapter()
+    + raise_routing_exception()
+    + update_template_context()
+    + make_shell_context()
+    + run()
+    + test_client()
+    + test_cli_runner()
+    + handle_http_exception()
+    + handle_user_exception()
+    + handle_exception()
+    + log_exception()
+    + dispatch_request()
+    + full_dispatch_request()
+    + finalize_request()
+    + make_default_options_response()
+    + ensure_sync()
+    + async_to_sync()
+    + url_for()
+    + make_response()
+    + preprocess_request()
+    + process_response()
+    + do_teardown_request()
+    + do_teardown_appcontext()
+    + app_context()
+    + request_context()
+    + test_request_context()
+    + wsgi_app()
+    + __call__()
+}
+class UnexpectedUnicodeError {
+}
+class DebugFilesKeyError {
+    - msg
+    + __init__()
+    + __str__()
+}
+class FormDataRoutingRedirect {
+    + __init__()
+}
+class newcls {
+    + __getitem__()
+}
+class _AppCtxGlobals {
+    + __getattr__()
+    + __setattr__()
+    + __delattr__()
+    + get()
+    + pop()
+    + setdefault()
+    + __contains__()
+    + __iter__()
+    + __repr__()
+}
+class AppContext {
+    - url_adapter
+    - app
+    + __init__()
+    + push()
+    + pop()
+    + __enter__()
+    + __exit__()
+}
+class RequestContext {
+    - url_adapter
+    - app
+    + __init__()
+    + copy()
+    + match_request()
+    + push()
+    + pop()
+    + __enter__()
+    + __exit__()
+    + __repr__()
+}
+class EnvironBuilder {
+    - app
+    + __init__()
+    + json_dumps()
+}
+class FlaskClient {
+    - preserve_context
+    - environ_base
+    - _context_stack
+    + __init__()
+    + session_transaction()
+    + _copy_environ()
+    + _request_from_builder_args()
+    + open()
+    + __enter__()
+    + __exit__()
+}
+class FlaskCliRunner {
+    - app
+    + __init__()
+    + invoke()
+}
+class View {
+    + dispatch_request()
+    + as_view()
+}
+class MethodView {
+    + __init_subclass__()
+    + dispatch_request()
+}
+class BlueprintSetupState {
+    - url_defaults
+    - options
+    - subdomain
+    - first_registration
+    - url_prefix
+    - name
+    - blueprint
+    - name_prefix
+    - app
+    + __init__()
+    + add_url_rule()
+}
+class Blueprint {
+    - cli_group
+    - url_values_defaults
+    - subdomain
+    - url_prefix
+    - name
+    + __init__()
+    + _check_setup_finished()
+    + record()
+    + record_once()
+    + make_setup_state()
+    + register_blueprint()
+    + register()
+    + _merge_blueprint_funcs()
+    + add_url_rule()
+    + app_template_filter()
+    + add_app_template_filter()
+    + app_template_test()
+    + add_app_template_test()
+    + app_template_global()
+    + add_app_template_global()
+    + before_app_request()
+    + after_app_request()
+    + teardown_app_request()
+    + app_context_processor()
+    + app_errorhandler()
+    + app_url_value_preprocessor()
+    + app_url_defaults()
+}
+class App {
+    - config
+    - instance_path
+    - _got_first_request
+    - subdomain_matching
+    - url_map
+    - aborter
+    + __init__()
+    + _check_setup_finished()
+    + name()
+    + logger()
+    + jinja_env()
+    + create_jinja_environment()
+    + make_config()
+    + make_aborter()
+    + auto_find_instance_path()
+    + create_global_jinja_loader()
+    + select_jinja_autoescape()
+    + debug()
+    + debug()
+    + register_blueprint()
+    + iter_blueprints()
+    + add_url_rule()
+    + template_filter()
+    + add_template_filter()
+    + template_test()
+    + add_template_test()
+    + template_global()
+    + add_template_global()
+    + teardown_appcontext()
+    + shell_context_processor()
+    + _find_error_handler()
+    + trap_http_exception()
+    + should_ignore_error()
+    + redirect()
+    + inject_url_defaults()
+    + handle_url_build_error()
+}
+class Scaffold {
+    - static_folder
+    - root_path
+    - import_name
+    - template_folder
+    - static_url_path
+    + __init__()
+    + __repr__()
+    + _check_setup_finished()
+    + static_folder()
+    + static_folder()
+    + has_static_folder()
+    + static_url_path()
+    + static_url_path()
+    + jinja_loader()
+    + _method_route()
+    + get()
+    + post()
+    + put()
+    + delete()
+    + patch()
+    + route()
+    + add_url_rule()
+    + endpoint()
+    + before_request()
+    + after_request()
+    + teardown_request()
+    + context_processor()
+    + url_value_preprocessor()
+    + url_defaults()
+    + errorhandler()
+    + register_error_handler()
+    + _get_exc_class_and_code()
+}
+class JSONProvider {
+    + __init__()
+    + dumps()
+    + dump()
+    + loads()
+    + load()
+    + _prepare_response_obj()
+    + response()
+}
+class DefaultJSONProvider {
+    + dumps()
+    + loads()
+    + response()
+}
+class JSONTag {
+    - serializer
+    + __init__()
+    + check()
+    + to_json()
+    + to_python()
+    + tag()
+}
+class TagDict {
+    + check()
+    + to_json()
+    + to_python()
+}
+class PassDict {
+    + check()
+    + to_json()
+}
+class TagTuple {
+    + check()
+    + to_json()
+    + to_python()
+}
+class PassList {
+    + check()
+    + to_json()
+}
+class TagBytes {
+    + check()
+    + to_json()
+    + to_python()
+}
+class TagMarkup {
+    + check()
+    + to_json()
+    + to_python()
+}
+class TagUUID {
+    + check()
+    + to_json()
+    + to_python()
+}
+class TagDateTime {
+    + check()
+    + to_json()
+    + to_python()
+}
+class TaggedJSONSerializer {
+    + __init__()
+    + register()
+    + tag()
+    + untag()
+    + _untag_scan()
+    + dumps()
+    + loads()
+}
+PrefixPathMiddleware --|>   object
+MyException --|>   Exception
+ForbiddenSubclass --|>   Forbidden
+E3 --|>   E1
+E3 --|>   E2
+ListConverter --|>   BaseConverter
+ContextConverter --|>   BaseConverter
+AsyncView --|>   View
+AsyncMethodView --|>   MethodView
+Other --|>   Index
+BetterIndex --|>   Index
+ChildView --|>   BaseView
+GetDeleteView --|>   GetView
+GetDeleteView --|>   DeleteView
+View --|>   GetView
+View --|>   OtherView
+TagDict --|>   JSONTag
+TagFoo ..> Foo
+TagFoo --|>   JSONTag
+Tag1 --|>   JSONTag
+Tag2 --|>   JSONTag
+FailingSessionInterface ..> SessionError
+PathAwareSessionInterface --|>   SecureCookieSessionInterface
+TestSendfile ..> StaticFileApp
+TestSendfile ..> FakePath
+TestUrlFor ..> MethodView
+TestUrlFor ..> MyView
+TestStreaming ..> Wrapper
+CustomProvider ..> X
+TestRoutes ..> Flask
+TestRoutes ..> FlaskGroup
+RenderTemplateView --|>   View
+SecureCookieSession --|>   SessionMixin
+NullSession --|>   SecureCookieSession
+SessionInterface ..> Response
+SessionInterface ..> Flask
+SessionInterface ..> SessionMixin
+SessionInterface ..> Request
+SessionInterface ..> NullSession
+SecureCookieSessionInterface ..> SecureCookieSession
+SecureCookieSessionInterface ..> Response
+SecureCookieSessionInterface ..> Flask
+SecureCookieSessionInterface ..> SessionMixin
+SecureCookieSessionInterface ..> Request
+ConfigAttribute ..> App
+Config --|>   dict
+Environment ..> App
+DispatchingJinjaLoader ..> App
+DispatchingJinjaLoader ..> Scaffold
+Blueprint ..> Response
+Blueprint ..> AppGroup
+Blueprint --|>   SansioBlueprint
+ScriptInfo ..> NoAppException
+ScriptInfo ..> Flask
+FlaskGroup ..> ScriptInfo
+FlaskGroup ..> NoAppException
+FlaskGroup ..> Flask
+Request --|>   RequestBase
+Response --|>   ResponseBase
+Flask ..> Response
+Flask ..> EnvironBuilder
+Flask ..> Environment
+Flask ..> FormDataRoutingRedirect
+Flask ..> FlaskClient
+Flask ..> AppContext
+Flask ..> RequestContext
+Flask ..> Request
+FlaskCliRunner ..> ScriptInfo
+FlaskCliRunner ..> Flask
+MethodView --|>   View
+BlueprintSetupState ..> Blueprint
+BlueprintSetupState ..> App
+Blueprint ..> App
+App ..> Environment
+App ..> Blueprint
+App ..> DispatchingJinjaLoader
+App ..> Config
+App ..> JSONProvider
+DefaultJSONProvider --|>   JSONProvider
+JSONTag ..> TaggedJSONSerializer
+TagDict --|>   JSONTag
+PassDict --|>   JSONTag
+TagTuple --|>   JSONTag
+PassList --|>   JSONTag
+TagBytes --|>   JSONTag
+TagMarkup --|>   JSONTag
+TagUUID --|>   JSONTag
+TagDateTime --|>   JSONTag
+@enduml
+```
+  Stopping...
