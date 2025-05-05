@@ -1,1916 +1,241 @@
 [
   {
-    "name": "PrefixPathMiddleware",
+    "name": "Image",
     "inherits": [],
-    "attributes": [
-      "prefix",
-      "app"
-    ],
+    "attributes": [],
     "methods": [
-      "__init__",
-      "__call__"
+      "__str__"
     ],
     "dependencies": []
   },
   {
-    "name": "MyException",
+    "name": "RoomConfig",
     "inherits": [
-      "Exception"
+      "AppConfig"
     ],
     "attributes": [],
     "methods": [],
     "dependencies": []
   },
   {
-    "name": "ForbiddenSubclass",
+    "name": "ImageForm",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Meta",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "MainPageConfig",
     "inherits": [
-      "Forbidden"
+      "AppConfig"
     ],
     "attributes": [],
     "methods": [],
     "dependencies": []
   },
   {
-    "name": "E1",
+    "name": "Profile",
+    "inherits": [],
+    "attributes": [],
+    "methods": [
+      "__str__"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "AppTokenGenerator",
     "inherits": [
-      "Exception"
+      "PasswordResetTokenGenerator"
     ],
     "attributes": [],
-    "methods": [],
+    "methods": [
+      "_make_hash_value"
+    ],
     "dependencies": []
   },
   {
-    "name": "E2",
+    "name": "AccountConfig",
     "inherits": [
-      "Exception"
+      "AppConfig"
     ],
+    "attributes": [],
+    "methods": [
+      "ready"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
     "attributes": [],
     "methods": [],
     "dependencies": []
   },
   {
-    "name": "E3",
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": []
+  },
+  {
+    "name": "Command",
     "inherits": [
-      "E1",
-      "E2"
+      "BaseCommand"
     ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "View",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__init__",
-      "index"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "ListConverter",
-    "inherits": [
-      "BaseConverter"
-    ],
-    "attributes": [],
-    "methods": [
-      "to_python",
-      "to_url"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "ContextConverter",
-    "inherits": [
-      "BaseConverter"
-    ],
-    "attributes": [],
-    "methods": [
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "AppError",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "BlueprintError",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "AsyncView",
-    "inherits": [
-      "View"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "AsyncMethodView",
-    "inherits": [
-      "MethodView"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "MySessionInterface",
-    "inherits": [
-      "SessionInterface"
-    ],
-    "attributes": [],
-    "methods": [
-      "save_session",
-      "open_session"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get",
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get",
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Other",
-    "inherits": [
-      "Index"
-    ],
-    "attributes": [],
-    "methods": [
-      "get",
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get",
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "BetterIndex",
-    "inherits": [
-      "Index"
-    ],
-    "attributes": [],
-    "methods": [
-      "delete"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index1",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index2",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index3",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get",
-      "head"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Index",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "BaseView",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ChildView",
-    "inherits": [
-      "BaseView"
-    ],
-    "attributes": [],
-    "methods": [
-      "get",
-      "propfind"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "GetView",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "DeleteView",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "delete"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "GetDeleteView",
-    "inherits": [
-      "GetView",
-      "DeleteView"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "GetView",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "OtherView",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "View",
-    "inherits": [
-      "GetView",
-      "OtherView"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "CountInit",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__init__",
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagDict",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Foo",
-    "inherits": [],
-    "attributes": [
-      "data"
-    ],
-    "methods": [
-      "__init__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagFoo",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": [
-      "Foo"
-    ]
-  },
-  {
-    "name": "Tag1",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Tag2",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "SuppressedFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "log_exception"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TestGreenletContextCopying",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_greenlet_context_copying",
-      "test_greenlet_context_copying_api"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "SessionError",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "FailingSessionInterface",
-    "inherits": [
-      "SessionInterface"
-    ],
-    "attributes": [],
-    "methods": [
-      "open_session"
-    ],
-    "dependencies": [
-      "SessionError"
-    ]
-  },
-  {
-    "name": "CustomFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "PathAwareSessionInterface",
-    "inherits": [
-      "SecureCookieSessionInterface"
-    ],
-    "attributes": [],
-    "methods": [
-      "get_cookie_name"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "CustomFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "MyDecoratorException",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "MyFunctionException",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "MyBlueprint",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get_send_file_max_age"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Base",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Test",
-    "inherits": [
-      "Base"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Config",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Flask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "TestGenericHandlers",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "app",
-      "report_error",
-      "test_handle_class_or_code",
-      "test_handle_generic_http",
-      "test_handle_generic"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "CustomException",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ParentException",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ChildExceptionUnregistered",
-    "inherits": [
-      "ParentException"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ChildExceptionRegistered",
-    "inherits": [
-      "ParentException"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ForbiddenSubclassRegistered",
-    "inherits": [
-      "Forbidden"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ForbiddenSubclassUnregistered",
-    "inherits": [
-      "Forbidden"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Custom",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "FakePath",
-    "inherits": [],
-    "attributes": [
-      "path"
-    ],
-    "methods": [
-      "__init__",
-      "__fspath__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "PyBytesIO",
-    "inherits": [],
-    "attributes": [
-      "_io"
-    ],
-    "methods": [
-      "__init__",
-      "__getattr__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TestSendfile",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_send_file",
-      "test_static_file",
-      "test_send_from_directory"
-    ],
-    "dependencies": [
-      "StaticFileApp",
-      "FakePath"
-    ]
-  },
-  {
-    "name": "TestUrlFor",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_url_for_with_anchor",
-      "test_url_for_with_scheme",
-      "test_url_for_with_scheme_not_external",
-      "test_url_for_with_alternating_schemes",
-      "test_url_with_method",
-      "test_url_for_with_self"
-    ],
-    "dependencies": [
-      "MethodView",
-      "MyView"
-    ]
-  },
-  {
-    "name": "TestNoImports",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_name_with_import_error"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TestStreaming",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_streaming_with_context",
-      "test_streaming_with_context_as_decorator",
-      "test_streaming_with_context_and_custom_close",
-      "test_stream_keeps_session"
-    ],
-    "dependencies": [
-      "Wrapper"
-    ]
-  },
-  {
-    "name": "TestHelpers",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "test_get_debug_flag",
-      "test_make_response"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "MyAborter",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "MyFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "My900Error",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "StaticFileApp",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "get_send_file_max_age"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "MyView",
-    "inherits": [
-      "MethodView"
-    ],
-    "attributes": [],
-    "methods": [
-      "get",
-      "post"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Wrapper",
-    "inherits": [],
-    "attributes": [
-      "_gen"
-    ],
-    "methods": [
-      "__init__",
-      "__iter__",
-      "close",
-      "__next__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "FixedOffset",
-    "inherits": [],
-    "attributes": [
-      "__offset",
-      "__name"
-    ],
-    "methods": [
-      "__init__",
-      "utcoffset",
-      "tzname",
-      "dst"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "X",
-    "inherits": [],
-    "attributes": [
-      "val"
-    ],
-    "methods": [
-      "__init__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "CustomProvider",
-    "inherits": [
-      "DefaultJSONProvider"
-    ],
-    "attributes": [],
-    "methods": [
-      "object_hook",
-      "loads"
-    ],
-    "dependencies": [
-      "X"
-    ]
-  },
-  {
-    "name": "ObjectWithHTML",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__html__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TestRoutes",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "app",
-      "invoke",
-      "expect_order",
-      "test_simple",
-      "test_sort",
-      "test_all_methods",
-      "test_no_routes",
-      "test_subdomain",
-      "test_host"
-    ],
-    "dependencies": [
-      "FlaskGroup",
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "make_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "Module",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_app"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "MockCtx",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "exit"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "MyFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "create_global_jinja_loader"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "_TestHandler",
-    "inherits": [],
     "attributes": [],
     "methods": [
       "handle"
     ],
-    "dependencies": []
-  },
-  {
-    "name": "CustomEnvironment",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "CustomFlask",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "CustomRequestGlobals",
-    "inherits": [],
-    "attributes": [
-      "spam"
-    ],
-    "methods": [
-      "__init__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Foo",
-    "inherits": [
-      "Exception"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "Namespace",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "add"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "SubRunner",
-    "inherits": [
-      "FlaskCliRunner"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "NS",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "StatusJSON",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "RenderTemplateView",
-    "inherits": [
-      "View"
-    ],
-    "attributes": [
-      "template_name"
-    ],
-    "methods": [
-      "__init__",
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "AuthActions",
-    "inherits": [],
-    "attributes": [
-      "_client"
-    ],
-    "methods": [
-      "__init__",
-      "login",
-      "logout"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Recorder",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "SessionMixin",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "permanent",
-      "permanent"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "SecureCookieSession",
-    "inherits": [
-      "SessionMixin"
-    ],
-    "attributes": [],
-    "methods": [
-      "__init__",
-      "__getitem__",
-      "get",
-      "setdefault"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "NullSession",
-    "inherits": [
-      "SecureCookieSession"
-    ],
-    "attributes": [],
-    "methods": [
-      "_fail"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "SessionInterface",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "make_null_session",
-      "is_null_session",
-      "get_cookie_name",
-      "get_cookie_domain",
-      "get_cookie_path",
-      "get_cookie_httponly",
-      "get_cookie_secure",
-      "get_cookie_samesite",
-      "get_cookie_partitioned",
-      "get_expiration_time",
-      "should_set_cookie",
-      "open_session",
-      "save_session"
-    ],
     "dependencies": [
-      "Response",
-      "Flask",
-      "SessionMixin",
-      "Request",
-      "NullSession"
-    ]
-  },
-  {
-    "name": "SecureCookieSessionInterface",
-    "inherits": [
-      "SessionInterface"
-    ],
-    "attributes": [],
-    "methods": [
-      "get_signing_serializer",
-      "open_session",
-      "save_session"
-    ],
-    "dependencies": [
-      "SecureCookieSession",
-      "Response",
-      "Flask",
-      "SessionMixin",
-      "Request"
-    ]
-  },
-  {
-    "name": "ConfigAttribute",
-    "inherits": [],
-    "attributes": [
-      "get_converter",
-      "__name__"
-    ],
-    "methods": [
-      "__init__",
-      "__get__",
-      "__get__",
-      "__get__",
-      "__set__"
-    ],
-    "dependencies": [
-      "App"
-    ]
-  },
-  {
-    "name": "Config",
-    "inherits": [
-      "dict"
-    ],
-    "attributes": [
-      "root_path"
-    ],
-    "methods": [
-      "__init__",
-      "from_envvar",
-      "from_prefixed_env",
-      "from_pyfile",
-      "from_object",
-      "from_file",
-      "from_mapping",
-      "get_namespace",
-      "__repr__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Environment",
-    "inherits": [
-      "BaseEnvironment"
-    ],
-    "attributes": [
-      "app"
-    ],
-    "methods": [
-      "__init__"
-    ],
-    "dependencies": [
-      "App"
-    ]
-  },
-  {
-    "name": "DispatchingJinjaLoader",
-    "inherits": [
-      "BaseLoader"
-    ],
-    "attributes": [
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "get_source",
-      "_get_source_explained",
-      "_get_source_fast",
-      "_iter_loaders",
-      "list_templates"
-    ],
-    "dependencies": [
-      "App",
-      "Scaffold"
-    ]
-  },
-  {
-    "name": "Blueprint",
-    "inherits": [
-      "SansioBlueprint"
-    ],
-    "attributes": [
-      "cli"
-    ],
-    "methods": [
-      "__init__",
-      "get_send_file_max_age",
-      "send_static_file",
-      "open_resource"
-    ],
-    "dependencies": [
-      "Response",
-      "AppGroup"
-    ]
-  },
-  {
-    "name": "NoAppException",
-    "inherits": [],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "ScriptInfo",
-    "inherits": [],
-    "attributes": [
-      "create_app",
-      "set_debug_flag",
-      "app_import_path",
-      "load_dotenv_defaults"
-    ],
-    "methods": [
-      "__init__",
-      "load_app"
-    ],
-    "dependencies": [
-      "NoAppException",
-      "Flask"
-    ]
-  },
-  {
-    "name": "AppGroup",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "command",
-      "group"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "FlaskGroup",
-    "inherits": [
-      "AppGroup"
-    ],
-    "attributes": [
-      "create_app",
-      "set_debug_flag",
-      "_loaded_plugin_commands",
-      "load_dotenv"
-    ],
-    "methods": [
-      "__init__",
-      "_load_plugin_commands",
-      "get_command",
-      "list_commands",
-      "make_context",
-      "parse_args"
-    ],
-    "dependencies": [
-      "ScriptInfo",
-      "NoAppException",
-      "Flask"
-    ]
-  },
-  {
-    "name": "CertParamType",
-    "inherits": [],
-    "attributes": [
-      "path_type"
-    ],
-    "methods": [
-      "__init__",
-      "convert"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "SeparatedPathType",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "convert"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Request",
-    "inherits": [
-      "RequestBase"
-    ],
-    "attributes": [],
-    "methods": [
-      "max_content_length",
-      "max_content_length",
-      "max_form_memory_size",
-      "max_form_memory_size",
-      "max_form_parts",
-      "max_form_parts",
-      "endpoint",
-      "blueprint",
-      "blueprints",
-      "_load_form_data",
-      "on_json_loading_failed"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Response",
-    "inherits": [
-      "ResponseBase"
-    ],
-    "attributes": [],
-    "methods": [
-      "max_cookie_size"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "Flask",
-    "inherits": [
-      "App"
-    ],
-    "attributes": [
-      "cli"
-    ],
-    "methods": [
-      "__init__",
-      "get_send_file_max_age",
-      "send_static_file",
-      "open_resource",
-      "open_instance_resource",
-      "create_jinja_environment",
-      "create_url_adapter",
-      "raise_routing_exception",
-      "update_template_context",
-      "make_shell_context",
-      "run",
-      "test_client",
-      "test_cli_runner",
-      "handle_http_exception",
-      "handle_user_exception",
-      "handle_exception",
-      "log_exception",
-      "dispatch_request",
-      "full_dispatch_request",
-      "finalize_request",
-      "make_default_options_response",
-      "ensure_sync",
-      "async_to_sync",
-      "url_for",
-      "make_response",
-      "preprocess_request",
-      "process_response",
-      "do_teardown_request",
-      "do_teardown_appcontext",
-      "app_context",
-      "request_context",
-      "test_request_context",
-      "wsgi_app",
-      "__call__"
-    ],
-    "dependencies": [
-      "Response",
-      "EnvironBuilder",
-      "Environment",
-      "FormDataRoutingRedirect",
-      "FlaskClient",
-      "AppContext",
-      "RequestContext",
-      "Request",
-      "FlaskCliRunner"
-    ]
-  },
-  {
-    "name": "UnexpectedUnicodeError",
-    "inherits": [
-      "AssertionError",
-      "UnicodeError"
-    ],
-    "attributes": [],
-    "methods": [],
-    "dependencies": []
-  },
-  {
-    "name": "DebugFilesKeyError",
-    "inherits": [
-      "KeyError",
-      "AssertionError"
-    ],
-    "attributes": [
-      "msg"
-    ],
-    "methods": [
-      "__init__",
-      "__str__"
-    ],
-    "dependencies": [
-      "Request"
-    ]
-  },
-  {
-    "name": "FormDataRoutingRedirect",
-    "inherits": [
-      "AssertionError"
-    ],
-    "attributes": [],
-    "methods": [
-      "__init__"
-    ],
-    "dependencies": [
-      "Request"
-    ]
-  },
-  {
-    "name": "newcls",
-    "inherits": [
-      "oldcls"
-    ],
-    "attributes": [],
-    "methods": [
-      "__getitem__"
-    ],
-    "dependencies": [
-      "DebugFilesKeyError"
-    ]
-  },
-  {
-    "name": "_AppCtxGlobals",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__getattr__",
-      "__setattr__",
-      "__delattr__",
-      "get",
-      "pop",
-      "setdefault",
-      "__contains__",
-      "__iter__",
-      "__repr__"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "AppContext",
-    "inherits": [],
-    "attributes": [
-      "url_adapter",
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "push",
-      "pop",
-      "__enter__",
-      "__exit__"
-    ],
-    "dependencies": [
-      "_AppCtxGlobals",
-      "Flask"
-    ]
-  },
-  {
-    "name": "RequestContext",
-    "inherits": [],
-    "attributes": [
-      "url_adapter",
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "copy",
-      "match_request",
-      "push",
-      "pop",
-      "__enter__",
-      "__exit__",
-      "__repr__"
-    ],
-    "dependencies": [
-      "SessionMixin",
-      "Request",
-      "AppContext",
-      "Flask"
-    ]
-  },
-  {
-    "name": "EnvironBuilder",
-    "inherits": [],
-    "attributes": [
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "json_dumps"
-    ],
-    "dependencies": [
-      "Flask"
-    ]
-  },
-  {
-    "name": "FlaskClient",
-    "inherits": [
-      "Client"
-    ],
-    "attributes": [
-      "preserve_context",
-      "environ_base",
-      "_context_stack"
-    ],
-    "methods": [
-      "__init__",
-      "session_transaction",
-      "_copy_environ",
-      "_request_from_builder_args",
-      "open",
-      "__enter__",
-      "__exit__"
-    ],
-    "dependencies": [
-      "EnvironBuilder",
-      "SessionMixin"
-    ]
-  },
-  {
-    "name": "FlaskCliRunner",
-    "inherits": [
-      "CliRunner"
-    ],
-    "attributes": [
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "invoke"
-    ],
-    "dependencies": [
-      "ScriptInfo",
-      "Flask"
-    ]
-  },
-  {
-    "name": "View",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "dispatch_request",
-      "as_view"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "MethodView",
-    "inherits": [
-      "View"
-    ],
-    "attributes": [],
-    "methods": [
-      "__init_subclass__",
-      "dispatch_request"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "BlueprintSetupState",
-    "inherits": [],
-    "attributes": [
-      "url_defaults",
-      "options",
-      "subdomain",
-      "first_registration",
-      "url_prefix",
-      "name",
-      "blueprint",
-      "name_prefix",
-      "app"
-    ],
-    "methods": [
-      "__init__",
-      "add_url_rule"
-    ],
-    "dependencies": [
-      "Blueprint",
-      "App"
-    ]
-  },
-  {
-    "name": "Blueprint",
-    "inherits": [
-      "Scaffold"
-    ],
-    "attributes": [
-      "cli_group",
-      "url_values_defaults",
-      "subdomain",
-      "url_prefix",
-      "name"
-    ],
-    "methods": [
-      "__init__",
-      "_check_setup_finished",
-      "record",
-      "record_once",
-      "make_setup_state",
-      "register_blueprint",
-      "register",
-      "_merge_blueprint_funcs",
-      "add_url_rule",
-      "app_template_filter",
-      "add_app_template_filter",
-      "app_template_test",
-      "add_app_template_test",
-      "app_template_global",
-      "add_app_template_global",
-      "before_app_request",
-      "after_app_request",
-      "teardown_app_request",
-      "app_context_processor",
-      "app_errorhandler",
-      "app_url_value_preprocessor",
-      "app_url_defaults"
-    ],
-    "dependencies": [
-      "App",
-      "BlueprintSetupState"
-    ]
-  },
-  {
-    "name": "App",
-    "inherits": [
-      "Scaffold"
-    ],
-    "attributes": [
-      "config",
-      "instance_path",
-      "_got_first_request",
-      "subdomain_matching",
-      "url_map",
-      "aborter"
-    ],
-    "methods": [
-      "__init__",
-      "_check_setup_finished",
-      "name",
-      "logger",
-      "jinja_env",
-      "create_jinja_environment",
-      "make_config",
-      "make_aborter",
-      "auto_find_instance_path",
-      "create_global_jinja_loader",
-      "select_jinja_autoescape",
-      "debug",
-      "debug",
-      "register_blueprint",
-      "iter_blueprints",
-      "add_url_rule",
-      "template_filter",
-      "add_template_filter",
-      "template_test",
-      "add_template_test",
-      "template_global",
-      "add_template_global",
-      "teardown_appcontext",
-      "shell_context_processor",
-      "_find_error_handler",
-      "trap_http_exception",
-      "should_ignore_error",
-      "redirect",
-      "inject_url_defaults",
-      "handle_url_build_error"
-    ],
-    "dependencies": [
-      "Environment",
-      "Blueprint",
-      "DispatchingJinjaLoader",
-      "Config",
-      "JSONProvider"
-    ]
-  },
-  {
-    "name": "Scaffold",
-    "inherits": [],
-    "attributes": [
-      "static_folder",
-      "root_path",
-      "import_name",
-      "template_folder",
-      "static_url_path"
-    ],
-    "methods": [
-      "__init__",
-      "__repr__",
-      "_check_setup_finished",
-      "static_folder",
-      "static_folder",
-      "has_static_folder",
-      "static_url_path",
-      "static_url_path",
-      "jinja_loader",
-      "_method_route",
-      "get",
-      "post",
-      "put",
-      "delete",
-      "patch",
-      "route",
-      "add_url_rule",
-      "endpoint",
-      "before_request",
-      "after_request",
-      "teardown_request",
-      "context_processor",
-      "url_value_preprocessor",
-      "url_defaults",
-      "errorhandler",
-      "register_error_handler",
-      "_get_exc_class_and_code"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "JSONProvider",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__init__",
-      "dumps",
-      "dump",
-      "loads",
-      "load",
-      "_prepare_response_obj",
-      "response"
-    ],
-    "dependencies": [
-      "Response",
-      "App"
-    ]
-  },
-  {
-    "name": "DefaultJSONProvider",
-    "inherits": [
-      "JSONProvider"
-    ],
-    "attributes": [],
-    "methods": [
-      "dumps",
-      "loads",
-      "response"
-    ],
-    "dependencies": [
-      "Response"
-    ]
-  },
-  {
-    "name": "JSONTag",
-    "inherits": [],
-    "attributes": [
-      "serializer"
-    ],
-    "methods": [
-      "__init__",
-      "check",
-      "to_json",
-      "to_python",
-      "tag"
-    ],
-    "dependencies": [
-      "TaggedJSONSerializer"
-    ]
-  },
-  {
-    "name": "TagDict",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "PassDict",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagTuple",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "PassList",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagBytes",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagMarkup",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagUUID",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TagDateTime",
-    "inherits": [
-      "JSONTag"
-    ],
-    "attributes": [],
-    "methods": [
-      "check",
-      "to_json",
-      "to_python"
-    ],
-    "dependencies": []
-  },
-  {
-    "name": "TaggedJSONSerializer",
-    "inherits": [],
-    "attributes": [],
-    "methods": [
-      "__init__",
-      "register",
-      "tag",
-      "untag",
-      "_untag_scan",
-      "dumps",
-      "loads"
-    ],
-    "dependencies": [
-      "JSONTag"
+      "Profile"
     ]
   }
 ]

@@ -29,7 +29,8 @@ def generate_readme_from_github_url(code : str) -> str:
     #     code = f.read()
 
     prompt = f'''
-You are a technical writer. Given the following all of each file start with keyword BEGINFILE + filename and end with keyword ENDFILE , generate a clean and professional `README.md` file.
+You are a technical writer. Given this JSON summary of a Python codebase, generate a clean and professional `README.md` file.
+
 
 Output requirements:
 - Start with a clear project title and short description.
@@ -98,15 +99,92 @@ Please generate a PlantUML class diagram using the following rules:
 
 Here is the JSON:
 ```json
-<PASTE YOUR JSON HERE>
-
-
 {data}
     '''
     try:
         response = model.generate_content(prompt)
         mermaid_class_code = response.text.strip().strip('"').strip("'")
         mermaid_class_code = clean_readme_output(mermaid_class_code)
+        mermaid_class_code = mermaid_class_code.rstrip('\n```')
         return f'{mermaid_class_code}'
+    except Exception as e:
+        return f'"""[ERROR generating docstring: {str(e)}]"""'
+
+
+def generate_usecase_diagram(code : str) -> str:
+    # with open(filename, "r") as f:
+    #     code = f.read()
+
+    prompt = f'''
+You are a software architect assistant.
+
+Given this JSON summary of a Python codebase, Generate the use case diagram.
+
+1. Extract **use cases** from class methods and top-level functions.
+2. Group them by modules or logical domains.
+3. Assume the actor interacting with user-facing functionality is "User" and with admin/internal features is "Admin" or "System".
+4. Only return PlantUML code inside `@startuml` to `@enduml`, no explanations.
+
+Here is the JSON summary of the codebase:
+{code}
+
+    '''
+    try:
+        response = model.generate_content(prompt)
+        usecase_code= response.text.strip().strip('"').strip("'")
+        usecase_code= clean_readme_output(usecase_code)
+        usecase_code=usecase_code.rstrip('\n```')
+        return f'{usecase_code}'
+    except Exception as e:
+        return f'"""[ERROR generating docstring: {str(e)}]"""'
+
+
+def generate_dependency_graph_diagram(code : str) -> str:
+    # with open(filename, "r") as f:
+    #     code = f.read()
+
+    prompt = f'''
+You are a software architecture assistant.
+
+Given the following summary of a software system (including modules, services, or technologies involved), generate a **Deployment Diagram** using **PlantUML** syntax.
+
+- Identify the main components.
+- Show how these components are deployed across nodes.
+- Use `@startuml` and `@enduml`.
+- Use `node`, `component`, and `database` to represent the system properly.
+Do not use any `!include` directives from the PlantUML standard library.
+
+Use only built-in PlantUML syntax like `node`, `component`, and `database`. 
+
+Avoid cloud-specific icons or libraries like `<cloud_service/amazon_s3>`.
+- Use the following skin settings for better design:
+
+```plantuml
+skinparam backgroundColor #f9f9f9
+skinparam node {{
+  BackgroundColor #ffffff
+  BorderColor #999999
+  FontColor #333333
+}}
+skinparam artifact {{
+  BackgroundColor #ffffff
+  BorderColor #aaaaaa
+}}
+skinparam database {{
+  BackgroundColor #e1f5fe
+  BorderColor #0288d1
+  FontColor #01579b
+}}
+
+Here is the system summary in JSON format (modules, classes, functions):
+{code}
+
+    '''
+    try:
+        response = model.generate_content(prompt)
+        usecase_code= response.text.strip().strip('"').strip("'")
+        usecase_code= clean_readme_output(usecase_code)
+        usecase_code=usecase_code.rstrip('\n```')
+        return f'{usecase_code}'
     except Exception as e:
         return f'"""[ERROR generating docstring: {str(e)}]"""'

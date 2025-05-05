@@ -6,26 +6,34 @@ import timeit
 import ast
 import json
 from collections import defaultdict
-def get_repo_data(url, local_dirs = './repo'):
-    allowed_list = ['py', 'cpp', 'html', 'css', 'js']
-    content = ""
-    if (not os.path.exists(local_dirs)):
-        Repo.clone_from(url, local_dirs, depth = 1)
-    for root, dirs, files in os.walk(local_dirs):
-        for file in files:
-            if file.split('.')[-1] in allowed_list and not file.startswith('__'):
-                filename = os.path.join(root, file)
-                with open(filename, 'r') as f:
-                    content += f'BEGINFILE f{filename}\n{f.read()}ENDFILE\n' 
-    return content
-
-
-
 import ast
 import os
 import json
 from collections import defaultdict
 from git import Repo
+def get_repo_data(url, local_dirs = './repo'):
+    local_dirs = './' + url.split('/')[-1].split('.')[0]
+    allowed_list = ['py', 'cpp', 'html', 'js']
+    content = ""
+    if (not os.path.exists(local_dirs)):
+        Repo.clone_from(url, local_dirs, depth = 1)
+        with open('code.txt', 'w') as f:
+            f.write('-1')
+        for root, dirs, files in os.walk(local_dirs):
+            for file in files:
+                if file.split('.')[-1] in allowed_list and not file.startswith('__'):
+                    filename = os.path.join(root, file)
+                    with open(filename, 'r') as f:
+                        content += f'BEGINFILE f{filename}\n{f.read()}ENDFILE\n' 
+        with open('code.txt', 'w') as f:
+            f.write(content)
+    else: 
+        with open('code.txt', 'r') as f:
+            content = f.read()
+    return content
+
+
+
 
 def get_repo_class(url, local_dirs='./repo'):
     local_dirs = './' + url.split('/')[-1].split('.')[0]
@@ -104,8 +112,40 @@ def get_repo_class(url, local_dirs='./repo'):
     return list_of_classes
 
 
+def extract_code_structure(url, repo_path="./repo"):
+    repo_path = './' + url.split('/')[-1].split('.')[0]
+    code_summary = defaultdict(lambda: {"classes": {}, "functions": []})
+    if (not os.path.exists(repo_path)):
+        Repo.clone_from(url, repo_path, depth = 1)
 
-        
+    for root, _, files in os.walk(repo_path):
+        for file in files:
+            if file.endswith(".py") and not file.startswith("__"):
+                full_path = os.path.join(root, file)
+                rel_path = os.path.relpath(full_path, repo_path)
+
+                with open(full_path, "r", encoding="utf-8") as f:
+                    try:
+                        tree = ast.parse(f.read(), filename=rel_path)
+                    except SyntaxError:
+                        continue  # skip invalid Python files
+
+                for node in ast.iter_child_nodes(tree):
+                    if isinstance(node, ast.ClassDef):
+                        method_names = [
+                            n.name for n in node.body if isinstance(n, ast.FunctionDef)
+                        ]
+                        code_summary[rel_path]["classes"][node.name] = {
+                            "methods": method_names
+                        }
+                    elif isinstance(node, ast.FunctionDef):
+                        code_summary[rel_path]["functions"].append(node.name)
+    with open('repo_summary.json', 'w') as f:
+        json.dump(code_summary, f, indent=2)
+    return code_summary
+
+
+ 
 
 
     
