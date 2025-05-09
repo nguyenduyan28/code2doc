@@ -144,42 +144,39 @@ def generate_dependency_graph_diagram(code : str) -> str:
     #     code = f.read()
 
     prompt = f'''
-You are a software architecture assistant.
+    You are a software architecture assistant.
 
-Given the following summary of a software system (including modules, services, or technologies involved), generate a **Deployment Diagram** using **PlantUML** syntax.
+    Generate a **Deployment Diagram** using **PlantUML**, using only built-in syntax (`node`, `component`, `database`, `artifact`). 
+    Avoid any syntax errors or broken references.
 
-- Identify the main components.
-- Show how these components are deployed across nodes.
-- Use `@startuml` and `@enduml`.
-- Use `node`, `component`, and `database` to represent the system properly.
-Do not use any `!include` directives from the PlantUML standard library.
+    Rules:
+    - Wrap each deployment unit (server, client) in a `node`
+    - Use unique identifiers for each component (e.g., `dbPostgreSQL`, `webApp`)
+    - Do **NOT** create a component or database inside a node and reference it from outside by a different name
+    - Use `-->` to link nodes/components with descriptive labels (e.g., `: uses`)
 
-Use only built-in PlantUML syntax like `node`, `component`, and `database`. 
+    Use this skin setting:
+    ```plantuml
+    skinparam backgroundColor #f9f9f9
+    skinparam node {{
+    BackgroundColor #ffffff
+    BorderColor #999999
+    FontColor #333333
+    }}
+    skinparam artifact {{
+    BackgroundColor #ffffff
+    BorderColor #aaaaaa
+    }}
+    skinparam database {{
+    BackgroundColor #e1f5fe
+    BorderColor #0288d1
+    FontColor #01579b
+    }}
 
-Avoid cloud-specific icons or libraries like `<cloud_service/amazon_s3>`.
-- Use the following skin settings for better design:
-
-```plantuml
-skinparam backgroundColor #f9f9f9
-skinparam node {{
-  BackgroundColor #ffffff
-  BorderColor #999999
-  FontColor #333333
-}}
-skinparam artifact {{
-  BackgroundColor #ffffff
-  BorderColor #aaaaaa
-}}
-skinparam database {{
-  BackgroundColor #e1f5fe
-  BorderColor #0288d1
-  FontColor #01579b
-}}
-
-Here is the system summary in JSON format (modules, classes, functions):
-{code}
-
+    Here is the system summary in JSON format:
+    {code}
     '''
+ 
     try:
         response = model.generate_content(prompt)
         usecase_code= response.text.strip().strip('"').strip("'")
@@ -188,3 +185,62 @@ Here is the system summary in JSON format (modules, classes, functions):
         return f'{usecase_code}'
     except Exception as e:
         return f'"""[ERROR generating docstring: {str(e)}]"""'
+    
+
+def generate_sad(summary: str, usecase_url: str, deploy_url: str, class_url: str) -> str:
+    prompt = f'''
+You are a software architect assistant.
+
+Given the following **JSON summary of a Python codebase**, generate a **Software Architecture Document (SAD)** in **pure markdown**, based on the following structure (from a real-world software architecture PDF):
+
+---
+
+## 1. Introduction
+- **1.1 Purpose**
+- **1.2 Scope**
+- **1.3 Definitions, Acronyms, Abbreviations**
+- **1.4 Overview**
+
+## 2. Architectural Goals and Constraints
+
+## 3. Use-Case Model
+- High-level use-case overview
+Insert the use-case diagram image using this markdown:
+![Use Case Diagram]({usecase_url})
+
+## 4. Logical View
+-- System components and responsibilities
+- For each major component:
+    Insert the class diagram here:
+    ![Class Diagram]({class_url})
+    - Description of key classes, attributes, methods
+
+## 5. Deployment View
+- 5.1 Client-side components
+- 5.2 Server-side components
+- 5.3 External services
+Show the deployment diagram:
+![Deployment Diagram]({deploy_url})
+- Summary of infrastructure
+
+## 6. Implementation View
+- Structure of source code: packages/modules
+- Build and run instructions if available
+- Technologies, frameworks used
+---
+
+**Rules**:
+- Markdown only, no PlantUML code
+- Just insert images using markdown `![alt](url)`
+- Write structured, clean, and concise
+
+System summary:
+{summary}
+'''
+    try:
+        response = model.generate_content(prompt)
+        sad_markdown = response.text.strip().strip('"').strip("'")
+        sad_markdown = clean_readme_output(sad_markdown)
+        return f'{sad_markdown}'
+    except Exception as e:
+        return f'[ERROR generating SAD: {str(e)}]'

@@ -143,13 +143,3 @@ def extract_code_structure(url, repo_path="./repo"):
     with open('repo_summary.json', 'w') as f:
         json.dump(code_summary, f, indent=2)
     return code_summary
-
-
- 
-
-
-    
-
-
-
-    
