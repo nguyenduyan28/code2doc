@@ -1,0 +1,549 @@
+{
+  "config_files": {
+    "src/Stud/requirements.txt": "asgiref==3.8.1\nDjango==5.0.7\ndotenv-python==0.0.1\npillow==10.4.0\npsycopg2-binary==2.9.9\npython-dotenv==1.0.1\nsqlparse==0.5.1\nwhitenoise==6.7.0\n",
+    "src/Stud/package.json": "{\n  \"dependencies\": {\n    \"@vercel/postgres\": \"^0.9.0\"\n  }\n}\n",
+    "src/Stud/node_modules/pg-int8/package.json": "{\n\t\"name\": \"pg-int8\",\n\t\"version\": \"1.0.1\",\n\t\"description\": \"64-bit big-endian signed integer-to-string conversion\",\n\t\"bugs\": \"https://github.com/charmander/pg-int8/issues\",\n\t\"license\": \"ISC\",\n\t\"files\": [\n\t\t\"index.js\"\n\t],\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"https://github.com/charmander/pg-int8\"\n\t},\n\t\"scripts\": {\n\t\t\"test\": \"tap test\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@charmander/eslint-config-base\": \"1.0.2\",\n\t\t\"tap\": \"10.7.3\"\n\t},\n\t\"engines\": {\n\t\t\"node\": \">=4.0.0\"\n\t}\n}\n",
+    "src/Stud/node_modules/node-gyp-build/package.json": "{\n  \"name\": \"node-gyp-build\",\n  \"version\": \"4.8.1\",\n  \"description\": \"Build tool and bindings loader for node-gyp that supports prebuilds\",\n  \"main\": \"index.js\",\n  \"devDependencies\": {\n    \"array-shuffle\": \"^1.0.1\",\n    \"standard\": \"^14.0.0\",\n    \"tape\": \"^5.0.0\"\n  },\n  \"scripts\": {\n    \"test\": \"standard && node test\"\n  },\n  \"bin\": {\n    \"node-gyp-build\": \"./bin.js\",\n    \"node-gyp-build-optional\": \"./optional.js\",\n    \"node-gyp-build-test\": \"./build-test.js\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/prebuild/node-gyp-build.git\"\n  },\n  \"author\": \"Mathias Buus (@mafintosh)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/prebuild/node-gyp-build/issues\"\n  },\n  \"homepage\": \"https://github.com/prebuild/node-gyp-build\"\n}\n",
+    "src/Stud/node_modules/@types/pg/package.json": "{\n    \"name\": \"@types/pg\",\n    \"version\": \"8.11.6\",\n    \"description\": \"TypeScript definitions for pg\",\n    \"homepage\": \"https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/pg\",\n    \"license\": \"MIT\",\n    \"contributors\": [\n        {\n            \"name\": \"Phips Peter\",\n            \"githubUsername\": \"pspeter3\",\n            \"url\": \"https://github.com/pspeter3\"\n        },\n        {\n            \"name\": \"Ravi van Rooijen\",\n            \"githubUsername\": \"HoldYourWaffle\",\n            \"url\": \"https://github.com/HoldYourWaffle\"\n        }\n    ],\n    \"main\": \"\",\n    \"types\": \"index.d.ts\",\n    \"repository\": {\n        \"type\": \"git\",\n        \"url\": \"https://github.com/DefinitelyTyped/DefinitelyTyped.git\",\n        \"directory\": \"types/pg\"\n    },\n    \"scripts\": {},\n    \"dependencies\": {\n        \"@types/node\": \"*\",\n        \"pg-protocol\": \"*\",\n        \"pg-types\": \"^4.0.1\"\n    },\n    \"typesPublisherContentHash\": \"d00165e25f9521ccfc0b298efe92bce22ee211ec97317d009ed4a2ce7ab6d475\",\n    \"typeScriptVersion\": \"4.7\"\n}",
+    "src/Stud/node_modules/@types/node/package.json": "{\n    \"name\": \"@types/node\",\n    \"version\": \"22.1.0\",\n    \"description\": \"TypeScript definitions for node\",\n    \"homepage\": \"https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node\",\n    \"license\": \"MIT\",\n    \"contributors\": [\n        {\n            \"name\": \"Microsoft TypeScript\",\n            \"githubUsername\": \"Microsoft\",\n            \"url\": \"https://github.com/Microsoft\"\n        },\n        {\n            \"name\": \"Alberto Schiabel\",\n            \"githubUsername\": \"jkomyno\",\n            \"url\": \"https://github.com/jkomyno\"\n        },\n        {\n            \"name\": \"Alvis HT Tang\",\n            \"githubUsername\": \"alvis\",\n            \"url\": \"https://github.com/alvis\"\n        },\n        {\n            \"name\": \"Andrew Makarov\",\n            \"githubUsername\": \"r3nya\",\n            \"url\": \"https://github.com/r3nya\"\n        },\n        {\n            \"name\": \"Benjamin Toueg\",\n            \"githubUsername\": \"btoueg\",\n            \"url\": \"https://github.com/btoueg\"\n        },\n        {\n            \"name\": \"Chigozirim C.\",\n            \"githubUsername\": \"smac89\",\n            \"url\": \"https://github.com/smac89\"\n        },\n        {\n            \"name\": \"David Junger\",\n            \"githubUsername\": \"touffy\",\n            \"url\": \"https://github.com/touffy\"\n        },\n        {\n            \"name\": \"Deividas Bakanas\",\n            \"githubUsername\": \"DeividasBakanas\",\n            \"url\": \"https://github.com/DeividasBakanas\"\n        },\n        {\n            \"name\": \"Eugene Y. Q. Shen\",\n            \"githubUsername\": \"eyqs\",\n            \"url\": \"https://github.com/eyqs\"\n        },\n        {\n            \"name\": \"Hannes Magnusson\",\n            \"githubUsername\": \"Hannes-Magnusson-CK\",\n            \"url\": \"https://github.com/Hannes-Magnusson-CK\"\n        },\n        {\n            \"name\": \"Huw\",\n            \"githubUsername\": \"hoo29\",\n            \"url\": \"https://github.com/hoo29\"\n        },\n        {\n            \"name\": \"Kelvin Jin\",\n            \"githubUsername\": \"kjin\",\n            \"url\": \"https://github.com/kjin\"\n        },\n        {\n            \"name\": \"Klaus Meinhardt\",\n            \"githubUsername\": \"ajafff\",\n            \"url\": \"https://github.com/ajafff\"\n        },\n        {\n            \"name\": \"Lishude\",\n            \"githubUsername\": \"islishude\",\n            \"url\": \"https://github.com/islishude\"\n        },\n        {\n            \"name\": \"Mariusz Wiktorczyk\",\n            \"githubUsername\": \"mwiktorczyk\",\n            \"url\": \"https://github.com/mwiktorczyk\"\n        },\n        {\n            \"name\": \"Mohsen Azimi\",\n            \"githubUsername\": \"mohsen1\",\n            \"url\": \"https://github.com/mohsen1\"\n        },\n        {\n            \"name\": \"Nikita Galkin\",\n            \"githubUsername\": \"galkin\",\n            \"url\": \"https://github.com/galkin\"\n        },\n        {\n            \"name\": \"Parambir Singh\",\n            \"githubUsername\": \"parambirs\",\n            \"url\": \"https://github.com/parambirs\"\n        },\n        {\n            \"name\": \"Sebastian Silbermann\",\n            \"githubUsername\": \"eps1lon\",\n            \"url\": \"https://github.com/eps1lon\"\n        },\n        {\n            \"name\": \"Thomas den Hollander\",\n            \"githubUsername\": \"ThomasdenH\",\n            \"url\": \"https://github.com/ThomasdenH\"\n        },\n        {\n            \"name\": \"Wilco Bakker\",\n            \"githubUsername\": \"WilcoBakker\",\n            \"url\": \"https://github.com/WilcoBakker\"\n        },\n        {\n            \"name\": \"wwwy3y3\",\n            \"githubUsername\": \"wwwy3y3\",\n            \"url\": \"https://github.com/wwwy3y3\"\n        },\n        {\n            \"name\": \"Samuel Ainsworth\",\n            \"githubUsername\": \"samuela\",\n            \"url\": \"https://github.com/samuela\"\n        },\n        {\n            \"name\": \"Kyle Uehlein\",\n            \"githubUsername\": \"kuehlein\",\n            \"url\": \"https://github.com/kuehlein\"\n        },\n        {\n            \"name\": \"Thanik Bhongbhibhat\",\n            \"githubUsername\": \"bhongy\",\n            \"url\": \"https://github.com/bhongy\"\n        },\n        {\n            \"name\": \"Marcin Kopacz\",\n            \"githubUsername\": \"chyzwar\",\n            \"url\": \"https://github.com/chyzwar\"\n        },\n        {\n            \"name\": \"Trivikram Kamat\",\n            \"githubUsername\": \"trivikr\",\n            \"url\": \"https://github.com/trivikr\"\n        },\n        {\n            \"name\": \"Junxiao Shi\",\n            \"githubUsername\": \"yoursunny\",\n            \"url\": \"https://github.com/yoursunny\"\n        },\n        {\n            \"name\": \"Ilia Baryshnikov\",\n            \"githubUsername\": \"qwelias\",\n            \"url\": \"https://github.com/qwelias\"\n        },\n        {\n            \"name\": \"ExE Boss\",\n            \"githubUsername\": \"ExE-Boss\",\n            \"url\": \"https://github.com/ExE-Boss\"\n        },\n        {\n            \"name\": \"Piotr B\u0142a\u017cejewicz\",\n            \"githubUsername\": \"peterblazejewicz\",\n            \"url\": \"https://github.com/peterblazejewicz\"\n        },\n        {\n            \"name\": \"Anna Henningsen\",\n            \"githubUsername\": \"addaleax\",\n            \"url\": \"https://github.com/addaleax\"\n        },\n        {\n            \"name\": \"Victor Perin\",\n            \"githubUsername\": \"victorperin\",\n            \"url\": \"https://github.com/victorperin\"\n        },\n        {\n            \"name\": \"Yongsheng Zhang\",\n            \"githubUsername\": \"ZYSzys\",\n            \"url\": \"https://github.com/ZYSzys\"\n        },\n        {\n            \"name\": \"NodeJS Contributors\",\n            \"githubUsername\": \"NodeJS\",\n            \"url\": \"https://github.com/NodeJS\"\n        },\n        {\n            \"name\": \"Linus Unneb\u00e4ck\",\n            \"githubUsername\": \"LinusU\",\n            \"url\": \"https://github.com/LinusU\"\n        },\n        {\n            \"name\": \"wafuwafu13\",\n            \"githubUsername\": \"wafuwafu13\",\n            \"url\": \"https://github.com/wafuwafu13\"\n        },\n        {\n            \"name\": \"Matteo Collina\",\n            \"githubUsername\": \"mcollina\",\n            \"url\": \"https://github.com/mcollina\"\n        },\n        {\n            \"name\": \"Dmitry Semigradsky\",\n            \"githubUsername\": \"Semigradsky\",\n            \"url\": \"https://github.com/Semigradsky\"\n        }\n    ],\n    \"main\": \"\",\n    \"types\": \"index.d.ts\",\n    \"repository\": {\n        \"type\": \"git\",\n        \"url\": \"https://github.com/DefinitelyTyped/DefinitelyTyped.git\",\n        \"directory\": \"types/node\"\n    },\n    \"scripts\": {},\n    \"dependencies\": {\n        \"undici-types\": \"~6.13.0\"\n    },\n    \"typesPublisherContentHash\": \"a016324027de394c0877c1d44c03999bacaa45ed9b7249649d03dd6b9bfe4e5b\",\n    \"typeScriptVersion\": \"4.8\"\n}",
+    "src/Stud/node_modules/obuf/package.json": "{\n  \"name\": \"obuf\",\n  \"version\": \"1.1.2\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"mocha test/**/*-test.js\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git@github.com:indutny/offset-buffer\"\n  },\n  \"keywords\": [\n    \"Offset\",\n    \"Buffer\",\n    \"reader\"\n  ],\n  \"author\": \"Fedor Indutny <fedor@indutny.com>\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/indutny/offset-buffer/issues\"\n  },\n  \"homepage\": \"https://github.com/indutny/offset-buffer\",\n  \"devDependencies\": {\n    \"mocha\": \"^1.21.4\"\n  }\n}\n",
+    "src/Stud/node_modules/postgres-range/package.json": "{\n  \"name\": \"postgres-range\",\n  \"version\": \"1.1.4\",\n  \"description\": \"Range data type parser and serializer for PostgreSQL\",\n  \"main\": \"index.js\",\n  \"repository\": \"https://github.com/martianboy/postgres-range\",\n  \"author\": \"Abbas Mashayekh <martianboy2005@gmail.com>\",\n  \"license\": \"MIT\",\n  \"scripts\": {\n    \"test\": \"standard && tape test.js | tap-spec\"\n  },\n  \"devDependencies\": {\n    \"@types/tape\": \"^4.13.2\",\n    \"standard\": \"^17.0.0\",\n    \"tap-spec\": \"^5.0.0\",\n    \"tape\": \"^5.5.3\",\n    \"typescript\": \"^4.7.3\"\n  }\n}\n",
+    "src/Stud/node_modules/pg-numeric/package.json": "{\n\t\"name\": \"pg-numeric\",\n\t\"version\": \"1.0.2\",\n\t\"description\": \"reads PostgreSQL binary format for numeric values into a string\",\n\t\"bugs\": \"https://github.com/charmander/pg-numeric/issues\",\n\t\"license\": \"ISC\",\n\t\"files\": [\n\t\t\"index.js\"\n\t],\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"https://github.com/charmander/pg-numeric\"\n\t},\n\t\"scripts\": {\n\t\t\"test\": \"node test\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@charmander/eslint-config-base\": \"1.2.0\"\n\t},\n\t\"engines\": {\n\t\t\"node\": \">=4\"\n\t}\n}\n",
+    "src/Stud/node_modules/@neondatabase/serverless/package.json": "{\n  \"name\": \"@neondatabase/serverless\",\n  \"version\": \"0.9.4\",\n  \"author\": \"Neon\",\n  \"description\": \"node-postgres for serverless environments from neon.tech\",\n  \"exports\": {\n    \"require\": \"./index.js\",\n    \"import\": \"./index.mjs\"\n  },\n  \"license\": \"MIT\",\n  \"homepage\": \"https://neon.tech\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/neondatabase/serverless\"\n  },\n  \"keywords\": [\n    \"Neon\",\n    \"serverless\",\n    \"Postgres\",\n    \"PostgreSQL\",\n    \"pg\",\n    \"database\",\n    \"SQL\",\n    \"edge\",\n    \"workers\",\n    \"Cloudflare\",\n    \"Vercel\",\n    \"RDBMS\",\n    \"WebSocket\",\n    \"https\"\n  ],\n  \"dependencies\": {\n    \"@types/pg\": \"8.11.6\"\n  }\n}\n",
+    "src/Stud/node_modules/pg-protocol/package.json": "{\n  \"name\": \"pg-protocol\",\n  \"version\": \"1.6.1\",\n  \"description\": \"The postgres client/server binary protocol, implemented in TypeScript\",\n  \"main\": \"dist/index.js\",\n  \"types\": \"dist/index.d.ts\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"@types/chai\": \"^4.2.7\",\n    \"@types/mocha\": \"^5.2.7\",\n    \"@types/node\": \"^12.12.21\",\n    \"chai\": \"^4.2.0\",\n    \"chunky\": \"^0.0.0\",\n    \"mocha\": \"^7.1.2\",\n    \"ts-node\": \"^8.5.4\",\n    \"typescript\": \"^4.0.3\"\n  },\n  \"scripts\": {\n    \"test\": \"mocha dist/**/*.test.js\",\n    \"build\": \"tsc\",\n    \"build:watch\": \"tsc --watch\",\n    \"prepublish\": \"yarn build\",\n    \"pretest\": \"yarn build\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/brianc/node-postgres.git\",\n    \"directory\": \"packages/pg-protocol\"\n  },\n  \"files\": [\n    \"/dist/*{js,ts,map}\",\n    \"/src\"\n  ],\n  \"gitHead\": \"b03c071d2d15af259e1e008e9628191c865e58fa\"\n}\n",
+    "src/Stud/node_modules/postgres-interval/package.json": "{\n  \"name\": \"postgres-interval\",\n  \"main\": \"index.js\",\n  \"version\": \"3.0.0\",\n  \"description\": \"Parse Postgres interval columns\",\n  \"license\": \"MIT\",\n  \"repository\": \"bendrucker/postgres-interval\",\n  \"author\": {\n    \"name\": \"Ben Drucker\",\n    \"email\": \"bvdrucker@gmail.com\",\n    \"url\": \"https://www.bendrucker.me\"\n  },\n  \"engines\": {\n    \"node\": \">=12\"\n  },\n  \"scripts\": {\n    \"test\": \"standard && tape test.js\"\n  },\n  \"keywords\": [\n    \"postgres\",\n    \"interval\",\n    \"parser\"\n  ],\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"standard\": \"^16.0.0\",\n    \"tape\": \"^5.0.0\"\n  },\n  \"files\": [\n    \"index.js\",\n    \"index.d.ts\",\n    \"readme.md\"\n  ]\n}\n",
+    "src/Stud/node_modules/undici-types/package.json": "{\n  \"name\": \"undici-types\",\n  \"version\": \"6.13.0\",\n  \"description\": \"A stand-alone types package for Undici\",\n  \"homepage\": \"https://undici.nodejs.org\",\n  \"bugs\": {\n    \"url\": \"https://github.com/nodejs/undici/issues\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/nodejs/undici.git\"\n  },\n  \"license\": \"MIT\",\n  \"types\": \"index.d.ts\",\n  \"files\": [\n    \"*.d.ts\"\n  ],\n  \"contributors\": [\n    {\n      \"name\": \"Daniele Belardi\",\n      \"url\": \"https://github.com/dnlup\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Ethan Arrowood\",\n      \"url\": \"https://github.com/ethan-arrowood\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Matteo Collina\",\n      \"url\": \"https://github.com/mcollina\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Matthew Aitken\",\n      \"url\": \"https://github.com/KhafraDev\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Robert Nagy\",\n      \"url\": \"https://github.com/ronag\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Szymon Marczak\",\n      \"url\": \"https://github.com/szmarczak\",\n      \"author\": true\n    },\n    {\n      \"name\": \"Tomas Della Vedova\",\n      \"url\": \"https://github.com/delvedor\",\n      \"author\": true\n    }\n  ]\n}",
+    "src/Stud/node_modules/postgres-date/package.json": "{\n  \"name\": \"postgres-date\",\n  \"main\": \"index.js\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Postgres date column parser\",\n  \"license\": \"MIT\",\n  \"repository\": \"bendrucker/postgres-date\",\n  \"author\": {\n    \"name\": \"Ben Drucker\",\n    \"email\": \"bvdrucker@gmail.com\",\n    \"url\": \"bendrucker.me\"\n  },\n  \"engines\": {\n    \"node\": \">=12\"\n  },\n  \"scripts\": {\n    \"test\": \"standard && tape test.js && tsd\"\n  },\n  \"keywords\": [\n    \"postgres\",\n    \"date\",\n    \"parser\"\n  ],\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"standard\": \"^16.0.0\",\n    \"tape\": \"^5.0.0\",\n    \"tsd\": \"^0.19.0\"\n  },\n  \"files\": [\n    \"index.js\",\n    \"index.d.ts\",\n    \"readme.md\"\n  ]\n}\n",
+    "src/Stud/node_modules/utf-8-validate/package.json": "{\n  \"name\": \"utf-8-validate\",\n  \"version\": \"6.0.4\",\n  \"description\": \"Check if a buffer contains valid UTF-8\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=6.14.2\"\n  },\n  \"scripts\": {\n    \"install\": \"node-gyp-build\",\n    \"prebuild\": \"prebuildify --napi --strip --target=8.11.2\",\n    \"prebuild-linux-musl-x64\": \"prebuildify-cross --image alpine --napi --strip --target=8.11.2\",\n    \"prebuild-darwin-x64+arm64\": \"prebuildify --arch x64+arm64 --napi --strip --target=8.11.2\",\n    \"test\": \"mocha\"\n  },\n  \"files\": [\n    \"prebuilds/\",\n    \"src/\",\n    \"deps/is_utf8/LICENSE-MIT\",\n    \"deps/is_utf8/include/is_utf8.h\",\n    \"deps/is_utf8/src/is_utf8.cpp\",\n    \"binding.gyp\",\n    \"fallback.js\",\n    \"index.js\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/websockets/utf-8-validate\"\n  },\n  \"keywords\": [\n    \"utf-8-validate\"\n  ],\n  \"author\": \"Einar Otto Stangvik <einaros@gmail.com> (http://2x.io)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/websockets/utf-8-validate/issues\"\n  },\n  \"homepage\": \"https://github.com/websockets/utf-8-validate\",\n  \"dependencies\": {\n    \"node-gyp-build\": \"^4.3.0\"\n  },\n  \"devDependencies\": {\n    \"mocha\": \"^10.0.0\",\n    \"node-gyp\": \"^10.0.1\",\n    \"prebuildify\": \"^6.0.0\",\n    \"prebuildify-cross\": \"^5.0.0\"\n  }\n}\n",
+    "src/Stud/node_modules/pg-types/package.json": "{\n  \"name\": \"pg-types\",\n  \"version\": \"4.0.2\",\n  \"description\": \"Query result type converters for node-postgres\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"coverage\": \"nyc --reporter=html npm test && open-cli coverage/index.html\",\n    \"coverage-ci\": \"nyc --reporter=lcov npm test && codecov\",\n    \"lint\": \"standard\",\n    \"test\": \"tape test/*.js | tap-spec && npm run test-ts && npm run lint\",\n    \"test-ts\": \"tsd\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/brianc/node-pg-types.git\"\n  },\n  \"keywords\": [\n    \"postgres\",\n    \"PostgreSQL\",\n    \"pg\"\n  ],\n  \"author\": \"Brian M. Carlson\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/brianc/node-pg-types/issues\"\n  },\n  \"homepage\": \"https://github.com/brianc/node-pg-types\",\n  \"devDependencies\": {\n    \"@types/node\": \"^14.14.33\",\n    \"codecov\": \"^3.8.1\",\n    \"nyc\": \"^15.1.0\",\n    \"open-cli\": \"^6.0.1\",\n    \"standard\": \"^16.0.3\",\n    \"tap-spec\": \"^5.0.0\",\n    \"tape\": \"^5.2.2\",\n    \"tsd\": \"^0.14.0\"\n  },\n  \"dependencies\": {\n    \"pg-int8\": \"1.0.1\",\n    \"pg-numeric\": \"1.0.2\",\n    \"postgres-array\": \"~3.0.1\",\n    \"postgres-bytea\": \"~3.0.0\",\n    \"postgres-date\": \"~2.1.0\",\n    \"postgres-interval\": \"^3.0.0\",\n    \"postgres-range\": \"^1.1.1\"\n  },\n  \"files\": [\n    \"index.js\",\n    \"index.d.ts\",\n    \"lib\"\n  ],\n  \"engines\": {\n    \"node\": \">=10\"\n  }\n}\n",
+    "src/Stud/node_modules/bufferutil/package.json": "{\n  \"name\": \"bufferutil\",\n  \"version\": \"4.0.8\",\n  \"description\": \"WebSocket buffer utils\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=6.14.2\"\n  },\n  \"scripts\": {\n    \"install\": \"node-gyp-build\",\n    \"prebuild\": \"prebuildify --napi --strip --target=14.0.0\",\n    \"prebuild-darwin-x64+arm64\": \"prebuildify --arch x64+arm64 --napi --strip --target=14.0.0\",\n    \"test\": \"mocha\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/websockets/bufferutil\"\n  },\n  \"keywords\": [\n    \"bufferutil\"\n  ],\n  \"author\": \"Einar Otto Stangvik <einaros@gmail.com> (http://2x.io)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/websockets/bufferutil/issues\"\n  },\n  \"homepage\": \"https://github.com/websockets/bufferutil\",\n  \"dependencies\": {\n    \"node-gyp-build\": \"^4.3.0\"\n  },\n  \"devDependencies\": {\n    \"mocha\": \"^10.0.0\",\n    \"node-gyp\": \"^9.1.0\",\n    \"prebuildify\": \"^5.0.0\"\n  }\n}\n",
+    "src/Stud/node_modules/@vercel/postgres/package.json": "{\n  \"name\": \"@vercel/postgres\",\n  \"version\": \"0.9.0\",\n  \"description\": \"Connect to Vercel Postgres databases on the Edge\",\n  \"homepage\": \"https://vercel.com\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/vercel/storage.git\",\n    \"directory\": \"packages/postgres\"\n  },\n  \"license\": \"Apache-2.0\",\n  \"type\": \"module\",\n  \"exports\": {\n    \".\": {\n      \"import\": {\n        \"edge-light\": \"./dist/index.js\",\n        \"node\": \"./dist/index-node.js\",\n        \"default\": \"./dist/index-node.js\"\n      },\n      \"require\": {\n        \"edge-light\": \"./dist/index.cjs\",\n        \"node\": \"./dist/index-node.cjs\",\n        \"default\": \"./dist/index-node.cjs\"\n      }\n    }\n  },\n  \"main\": \"./dist/index.cjs\",\n  \"module\": \"./dist/index.js\",\n  \"files\": [\n    \"dist\"\n  ],\n  \"jest\": {\n    \"preset\": \"ts-jest\",\n    \"testEnvironment\": \"node\"\n  },\n  \"dependencies\": {\n    \"@neondatabase/serverless\": \"^0.9.3\",\n    \"bufferutil\": \"^4.0.8\",\n    \"utf-8-validate\": \"^6.0.4\",\n    \"ws\": \"^8.17.1\"\n  },\n  \"devDependencies\": {\n    \"@changesets/cli\": \"2.27.1\",\n    \"@edge-runtime/jest-environment\": \"2.3.10\",\n    \"@edge-runtime/types\": \"2.2.9\",\n    \"@types/jest\": \"29.5.12\",\n    \"@types/node\": \"20.11.19\",\n    \"@types/ws\": \"8.5.10\",\n    \"eslint\": \"8.56.0\",\n    \"jest\": \"29.7.0\",\n    \"prettier\": \"3.2.5\",\n    \"ts-jest\": \"29.1.2\",\n    \"tsup\": \"8.0.2\",\n    \"typescript\": \"5.3.3\",\n    \"eslint-config-custom\": \"0.0.0\",\n    \"tsconfig\": \"0.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=14.6\"\n  },\n  \"scripts\": {\n    \"build\": \"tsup\",\n    \"dev\": \"tsup --watch --clean=false\",\n    \"lint\": \"eslint \\\"src/**/*.ts\\\"\",\n    \"prettier-check\": \"prettier --check .\",\n    \"publint\": \"npx publint\",\n    \"test\": \"jest --env @edge-runtime/jest-environment .test.ts && jest --env node .test.ts\",\n    \"type-check\": \"tsc --noEmit\"\n  }\n}",
+    "src/Stud/node_modules/postgres-array/package.json": "{\n  \"name\": \"postgres-array\",\n  \"main\": \"index.js\",\n  \"version\": \"3.0.2\",\n  \"description\": \"Parse postgres array columns\",\n  \"license\": \"MIT\",\n  \"repository\": \"bendrucker/postgres-array\",\n  \"author\": {\n    \"name\": \"Ben Drucker\",\n    \"email\": \"bvdrucker@gmail.com\",\n    \"url\": \"bendrucker.me\"\n  },\n  \"engines\": {\n    \"node\": \">=12\"\n  },\n  \"scripts\": {\n    \"test\": \"standard && tape test.js\"\n  },\n  \"types\": \"index.d.ts\",\n  \"keywords\": [\n    \"postgres\",\n    \"array\",\n    \"parser\"\n  ],\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"standard\": \"^17.0.0\",\n    \"tape\": \"^5.0.0\"\n  },\n  \"files\": [\n    \"index.js\",\n    \"index.d.ts\",\n    \"readme.md\"\n  ]\n}\n",
+    "src/Stud/node_modules/ws/package.json": "{\n  \"name\": \"ws\",\n  \"version\": \"8.18.0\",\n  \"description\": \"Simple to use, blazing fast and thoroughly tested websocket client and server for Node.js\",\n  \"keywords\": [\n    \"HyBi\",\n    \"Push\",\n    \"RFC-6455\",\n    \"WebSocket\",\n    \"WebSockets\",\n    \"real-time\"\n  ],\n  \"homepage\": \"https://github.com/websockets/ws\",\n  \"bugs\": \"https://github.com/websockets/ws/issues\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/websockets/ws.git\"\n  },\n  \"author\": \"Einar Otto Stangvik <einaros@gmail.com> (http://2x.io)\",\n  \"license\": \"MIT\",\n  \"main\": \"index.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./browser.js\",\n      \"import\": \"./wrapper.mjs\",\n      \"require\": \"./index.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n  \"browser\": \"browser.js\",\n  \"engines\": {\n    \"node\": \">=10.0.0\"\n  },\n  \"files\": [\n    \"browser.js\",\n    \"index.js\",\n    \"lib/*.js\",\n    \"wrapper.mjs\"\n  ],\n  \"scripts\": {\n    \"test\": \"nyc --reporter=lcov --reporter=text mocha --throw-deprecation test/*.test.js\",\n    \"integration\": \"mocha --throw-deprecation test/*.integration.js\",\n    \"lint\": \"eslint . && prettier --check --ignore-path .gitignore \\\"**/*.{json,md,yaml,yml}\\\"\"\n  },\n  \"peerDependencies\": {\n    \"bufferutil\": \"^4.0.1\",\n    \"utf-8-validate\": \">=5.0.2\"\n  },\n  \"peerDependenciesMeta\": {\n    \"bufferutil\": {\n      \"optional\": true\n    },\n    \"utf-8-validate\": {\n      \"optional\": true\n    }\n  },\n  \"devDependencies\": {\n    \"benchmark\": \"^2.1.4\",\n    \"bufferutil\": \"^4.0.1\",\n    \"eslint\": \"^9.0.0\",\n    \"eslint-config-prettier\": \"^9.0.0\",\n    \"eslint-plugin-prettier\": \"^5.0.0\",\n    \"globals\": \"^15.0.0\",\n    \"mocha\": \"^8.4.0\",\n    \"nyc\": \"^15.0.0\",\n    \"prettier\": \"^3.0.0\",\n    \"utf-8-validate\": \"^6.0.0\"\n  }\n}\n",
+    "src/Stud/node_modules/postgres-bytea/package.json": "{\n  \"name\": \"postgres-bytea\",\n  \"main\": \"index.js\",\n  \"version\": \"3.0.0\",\n  \"description\": \"Postgres bytea parser\",\n  \"license\": \"MIT\",\n  \"repository\": \"bendrucker/postgres-bytea\",\n  \"author\": {\n    \"name\": \"Ben Drucker\",\n    \"email\": \"bvdrucker@gmail.com\",\n    \"url\": \"bendrucker.me\"\n  },\n  \"engines\": {\n    \"node\": \">= 6\"\n  },\n  \"scripts\": {\n    \"test\": \"standard && tape *.js\"\n  },\n  \"keywords\": [\n    \"bytea\",\n    \"postgres\",\n    \"binary\",\n    \"parser\"\n  ],\n  \"dependencies\": {\n    \"obuf\": \"~1.1.2\"\n  },\n  \"devDependencies\": {\n    \"concat-stream\": \"2.0.0\",\n    \"standard\": \"^14.0.0\",\n    \"stream-to-promise\": \"^3.0.0\",\n    \"tape\": \"^5.0.0\",\n    \"tape-promise\": \"4.0.0\"\n  },\n  \"files\": [\n    \"*.js\"\n  ]\n}\n",
+    "src/Stud/Stud/.env": ""
+  },
+  "docstrings": {
+    "src/Stud/manage.py": [
+      {
+        "name": "module",
+        "docstring": "Django's command-line utility for administrative tasks."
+      },
+      {
+        "name": "main",
+        "docstring": "Run administrative tasks."
+      }
+    ],
+    "src/Stud/Stud/asgi.py": [
+      {
+        "name": "module",
+        "docstring": "ASGI config for Stud project.\n\nIt exposes the ASGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/4.2/howto/deployment/asgi/"
+      }
+    ],
+    "src/Stud/Stud/settings.py": [
+      {
+        "name": "module",
+        "docstring": "Django settings for Stud project.\n\nGenerated by 'django-admin startproject' using Django 4.2.13.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/4.2/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/4.2/ref/settings/"
+      }
+    ],
+    "src/Stud/Stud/urls.py": [
+      {
+        "name": "module",
+        "docstring": "URL configuration for Stud project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/4.2/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))"
+      }
+    ],
+    "src/Stud/Stud/wsgi.py": [
+      {
+        "name": "module",
+        "docstring": "WSGI config for Stud project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/"
+      }
+    ]
+  },
+  "directory_structure": {
+    "src/Stud": [
+      "src/Stud/requirements.txt",
+      "src/Stud/package.json",
+      "src/Stud/manage.py"
+    ],
+    "src/Stud/room": [
+      "src/Stud/room/models.py",
+      "src/Stud/room/__init__.py",
+      "src/Stud/room/apps.py",
+      "src/Stud/room/forms.py",
+      "src/Stud/room/admin.py",
+      "src/Stud/room/tests.py",
+      "src/Stud/room/urls.py",
+      "src/Stud/room/views.py"
+    ],
+    "src/Stud/room/migrations": [
+      "src/Stud/room/migrations/0004_alter_image_title.py",
+      "src/Stud/room/migrations/0002_room.py",
+      "src/Stud/room/migrations/0005_alter_room_roomprivacy.py",
+      "src/Stud/room/migrations/0006_delete_room.py",
+      "src/Stud/room/migrations/__init__.py",
+      "src/Stud/room/migrations/0001_initial.py",
+      "src/Stud/room/migrations/0003_alter_room_roomprivacy.py"
+    ],
+    "src/Stud/room/static/room/js/YourRoom": [
+      "src/Stud/room/static/room/js/YourRoom/controlWidget.js"
+    ],
+    "src/Stud/room/templates/room": [
+      "src/Stud/room/templates/room/Newpass.html",
+      "src/Stud/room/templates/room/YourRoom.html",
+      "src/Stud/room/templates/room/image_list.html",
+      "src/Stud/room/templates/room/boostrap.html",
+      "src/Stud/room/templates/room/upload_image.html"
+    ],
+    "src/Stud/resources/staticfiles/room/js/YourRoom": [
+      "src/Stud/resources/staticfiles/room/js/YourRoom/controlWidget.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js": [
+      "src/Stud/resources/staticfiles/admin/js/urlify.js",
+      "src/Stud/resources/staticfiles/admin/js/core.js",
+      "src/Stud/resources/staticfiles/admin/js/collapse.js",
+      "src/Stud/resources/staticfiles/admin/js/actions.js",
+      "src/Stud/resources/staticfiles/admin/js/prepopulate.js",
+      "src/Stud/resources/staticfiles/admin/js/cancel.js",
+      "src/Stud/resources/staticfiles/admin/js/theme.js",
+      "src/Stud/resources/staticfiles/admin/js/nav_sidebar.js",
+      "src/Stud/resources/staticfiles/admin/js/autocomplete.js",
+      "src/Stud/resources/staticfiles/admin/js/inlines.js",
+      "src/Stud/resources/staticfiles/admin/js/change_form.js",
+      "src/Stud/resources/staticfiles/admin/js/filters.js",
+      "src/Stud/resources/staticfiles/admin/js/SelectFilter2.js",
+      "src/Stud/resources/staticfiles/admin/js/jquery.init.js",
+      "src/Stud/resources/staticfiles/admin/js/popup_response.js",
+      "src/Stud/resources/staticfiles/admin/js/SelectBox.js",
+      "src/Stud/resources/staticfiles/admin/js/calendar.js",
+      "src/Stud/resources/staticfiles/admin/js/prepopulate_init.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js/admin": [
+      "src/Stud/resources/staticfiles/admin/js/admin/RelatedObjectLookups.js",
+      "src/Stud/resources/staticfiles/admin/js/admin/DateTimeShortcuts.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js/vendor/jquery": [
+      "src/Stud/resources/staticfiles/admin/js/vendor/jquery/jquery.min.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/jquery/jquery.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js/vendor/xregexp": [
+      "src/Stud/resources/staticfiles/admin/js/vendor/xregexp/xregexp.min.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/xregexp/xregexp.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js/vendor/select2": [
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/select2.full.min.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/select2.full.js"
+    ],
+    "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n": [
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/pt.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/hsb.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/vi.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/lv.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/gl.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/pl.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/el.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/dsb.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/et.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/is.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sl.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ko.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/hr.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ms.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/fi.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/th.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ru.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/eu.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/mk.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sq.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ja.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ka.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/he.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/bg.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/hy.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ne.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/af.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/id.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/az.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ca.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/nb.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/zh-CN.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/zh-TW.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/pt-BR.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/da.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/fa.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/de.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/en.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/bs.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/tk.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sv.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/hi.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/uk.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/cs.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/km.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/fr.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/nl.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sr.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/hu.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/lt.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ar.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/sk.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/it.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/es.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/bn.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ro.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/ps.js",
+      "src/Stud/resources/staticfiles/admin/js/vendor/select2/i18n/tr.js"
+    ],
+    "src/Stud/resources/staticfiles/mainpage/js": [
+      "src/Stud/resources/staticfiles/mainpage/js/animation.js",
+      "src/Stud/resources/staticfiles/mainpage/js/eventHandle.js"
+    ],
+    "src/Stud/resources/staticfiles/mainpage/js/Explore": [
+      "src/Stud/resources/staticfiles/mainpage/js/Explore/explore.js"
+    ],
+    "src/Stud/resources/staticfiles/mainpage/js/Create Room": [
+      "src/Stud/resources/staticfiles/mainpage/js/Create Room/createRoom.js"
+    ],
+    "src/Stud/resources/staticfiles/mainpage/js/YourRoom": [
+      "src/Stud/resources/staticfiles/mainpage/js/YourRoom/controlWidget.js"
+    ],
+    "src/Stud/resources/staticfiles/account/js": [
+      "src/Stud/resources/staticfiles/account/js/controlWidget.js"
+    ],
+    "src/Stud/resources/staticfiles/account/js/Login": [
+      "src/Stud/resources/staticfiles/account/js/Login/script.js"
+    ],
+    "src/Stud/node_modules/pg-int8": [
+      "src/Stud/node_modules/pg-int8/index.js",
+      "src/Stud/node_modules/pg-int8/package.json"
+    ],
+    "src/Stud/node_modules/node-gyp-build": [
+      "src/Stud/node_modules/node-gyp-build/bin.js",
+      "src/Stud/node_modules/node-gyp-build/index.js",
+      "src/Stud/node_modules/node-gyp-build/build-test.js",
+      "src/Stud/node_modules/node-gyp-build/optional.js",
+      "src/Stud/node_modules/node-gyp-build/package.json",
+      "src/Stud/node_modules/node-gyp-build/node-gyp-build.js"
+    ],
+    "src/Stud/node_modules/@types/pg": [
+      "src/Stud/node_modules/@types/pg/package.json"
+    ],
+    "src/Stud/node_modules/@types/node": [
+      "src/Stud/node_modules/@types/node/package.json"
+    ],
+    "src/Stud/node_modules/obuf": [
+      "src/Stud/node_modules/obuf/index.js",
+      "src/Stud/node_modules/obuf/package.json"
+    ],
+    "src/Stud/node_modules/obuf/test": [
+      "src/Stud/node_modules/obuf/test/buffer-test.js"
+    ],
+    "src/Stud/node_modules/postgres-range": [
+      "src/Stud/node_modules/postgres-range/index.js",
+      "src/Stud/node_modules/postgres-range/package.json"
+    ],
+    "src/Stud/node_modules/pg-numeric": [
+      "src/Stud/node_modules/pg-numeric/index.js",
+      "src/Stud/node_modules/pg-numeric/package.json"
+    ],
+    "src/Stud/node_modules/@neondatabase/serverless": [
+      "src/Stud/node_modules/@neondatabase/serverless/index.js",
+      "src/Stud/node_modules/@neondatabase/serverless/package.json"
+    ],
+    "src/Stud/node_modules/pg-protocol": [
+      "src/Stud/node_modules/pg-protocol/package.json"
+    ],
+    "src/Stud/node_modules/pg-protocol/dist": [
+      "src/Stud/node_modules/pg-protocol/dist/outbound-serializer.test.js",
+      "src/Stud/node_modules/pg-protocol/dist/index.js",
+      "src/Stud/node_modules/pg-protocol/dist/inbound-parser.test.js",
+      "src/Stud/node_modules/pg-protocol/dist/parser.js",
+      "src/Stud/node_modules/pg-protocol/dist/buffer-reader.js",
+      "src/Stud/node_modules/pg-protocol/dist/serializer.js",
+      "src/Stud/node_modules/pg-protocol/dist/buffer-writer.js",
+      "src/Stud/node_modules/pg-protocol/dist/messages.js",
+      "src/Stud/node_modules/pg-protocol/dist/b.js"
+    ],
+    "src/Stud/node_modules/postgres-interval": [
+      "src/Stud/node_modules/postgres-interval/index.js",
+      "src/Stud/node_modules/postgres-interval/package.json"
+    ],
+    "src/Stud/node_modules/undici-types": [
+      "src/Stud/node_modules/undici-types/package.json"
+    ],
+    "src/Stud/node_modules/postgres-date": [
+      "src/Stud/node_modules/postgres-date/index.js",
+      "src/Stud/node_modules/postgres-date/package.json"
+    ],
+    "src/Stud/node_modules/utf-8-validate": [
+      "src/Stud/node_modules/utf-8-validate/index.js",
+      "src/Stud/node_modules/utf-8-validate/package.json",
+      "src/Stud/node_modules/utf-8-validate/fallback.js"
+    ],
+    "src/Stud/node_modules/utf-8-validate/deps/is_utf8/src": [
+      "src/Stud/node_modules/utf-8-validate/deps/is_utf8/src/is_utf8.cpp"
+    ],
+    "src/Stud/node_modules/pg-types": [
+      "src/Stud/node_modules/pg-types/index.js",
+      "src/Stud/node_modules/pg-types/package.json"
+    ],
+    "src/Stud/node_modules/pg-types/lib": [
+      "src/Stud/node_modules/pg-types/lib/builtins.js",
+      "src/Stud/node_modules/pg-types/lib/binaryParsers.js",
+      "src/Stud/node_modules/pg-types/lib/textParsers.js"
+    ],
+    "src/Stud/node_modules/bufferutil": [
+      "src/Stud/node_modules/bufferutil/index.js",
+      "src/Stud/node_modules/bufferutil/package.json",
+      "src/Stud/node_modules/bufferutil/fallback.js"
+    ],
+    "src/Stud/node_modules/@vercel/postgres": [
+      "src/Stud/node_modules/@vercel/postgres/package.json"
+    ],
+    "src/Stud/node_modules/@vercel/postgres/dist": [
+      "src/Stud/node_modules/@vercel/postgres/dist/index.js",
+      "src/Stud/node_modules/@vercel/postgres/dist/index-node.js",
+      "src/Stud/node_modules/@vercel/postgres/dist/chunk-WDBQYBZQ.js"
+    ],
+    "src/Stud/node_modules/postgres-array": [
+      "src/Stud/node_modules/postgres-array/index.js",
+      "src/Stud/node_modules/postgres-array/package.json"
+    ],
+    "src/Stud/node_modules/ws": [
+      "src/Stud/node_modules/ws/index.js",
+      "src/Stud/node_modules/ws/package.json",
+      "src/Stud/node_modules/ws/browser.js"
+    ],
+    "src/Stud/node_modules/ws/lib": [
+      "src/Stud/node_modules/ws/lib/constants.js",
+      "src/Stud/node_modules/ws/lib/websocket-server.js",
+      "src/Stud/node_modules/ws/lib/stream.js",
+      "src/Stud/node_modules/ws/lib/event-target.js",
+      "src/Stud/node_modules/ws/lib/permessage-deflate.js",
+      "src/Stud/node_modules/ws/lib/receiver.js",
+      "src/Stud/node_modules/ws/lib/sender.js",
+      "src/Stud/node_modules/ws/lib/subprotocol.js",
+      "src/Stud/node_modules/ws/lib/limiter.js",
+      "src/Stud/node_modules/ws/lib/websocket.js",
+      "src/Stud/node_modules/ws/lib/validation.js",
+      "src/Stud/node_modules/ws/lib/buffer-util.js",
+      "src/Stud/node_modules/ws/lib/extension.js"
+    ],
+    "src/Stud/node_modules/postgres-bytea": [
+      "src/Stud/node_modules/postgres-bytea/decoder-test.js",
+      "src/Stud/node_modules/postgres-bytea/decode-test.js",
+      "src/Stud/node_modules/postgres-bytea/encoder.js",
+      "src/Stud/node_modules/postgres-bytea/decoder.js",
+      "src/Stud/node_modules/postgres-bytea/index.js",
+      "src/Stud/node_modules/postgres-bytea/decode.js",
+      "src/Stud/node_modules/postgres-bytea/package.json",
+      "src/Stud/node_modules/postgres-bytea/encoder-test.js"
+    ],
+    "src/Stud/mainpage": [
+      "src/Stud/mainpage/models.py",
+      "src/Stud/mainpage/__init__.py",
+      "src/Stud/mainpage/apps.py",
+      "src/Stud/mainpage/admin.py",
+      "src/Stud/mainpage/tests.py",
+      "src/Stud/mainpage/urls.py",
+      "src/Stud/mainpage/views.py"
+    ],
+    "src/Stud/mainpage/migrations": [
+      "src/Stud/mainpage/migrations/__init__.py"
+    ],
+    "src/Stud/mainpage/static/mainpage/js/Home": [
+      "src/Stud/mainpage/static/mainpage/js/Home/animation.js",
+      "src/Stud/mainpage/static/mainpage/js/Home/eventHandle.js"
+    ],
+    "src/Stud/mainpage/static/mainpage/js/Explore": [
+      "src/Stud/mainpage/static/mainpage/js/Explore/explore.js"
+    ],
+    "src/Stud/mainpage/static/mainpage/js/YourRoom": [
+      "src/Stud/mainpage/static/mainpage/js/YourRoom/controlWidget.js"
+    ],
+    "src/Stud/mainpage/templates/mainpage": [
+      "src/Stud/mainpage/templates/mainpage/Home.html",
+      "src/Stud/mainpage/templates/mainpage/Contact.html",
+      "src/Stud/mainpage/templates/mainpage/temp.html",
+      "src/Stud/mainpage/templates/mainpage/Explore.html"
+    ],
+    "src/Stud/Stud": [
+      "src/Stud/Stud/asgi.py",
+      "src/Stud/Stud/__init__.py",
+      "src/Stud/Stud/.env",
+      "src/Stud/Stud/settings.py",
+      "src/Stud/Stud/info.py",
+      "src/Stud/Stud/urls.py",
+      "src/Stud/Stud/wsgi.py"
+    ],
+    "src/Stud/account": [
+      "src/Stud/account/signals.py",
+      "src/Stud/account/models.py",
+      "src/Stud/account/__init__.py",
+      "src/Stud/account/tokens.py",
+      "src/Stud/account/apps.py",
+      "src/Stud/account/forms.py",
+      "src/Stud/account/admin.py",
+      "src/Stud/account/tests.py",
+      "src/Stud/account/urls.py",
+      "src/Stud/account/views.py"
+    ],
+    "src/Stud/account/migrations": [
+      "src/Stud/account/migrations/0004_alter_profile_role.py",
+      "src/Stud/account/migrations/0006_alter_profile_role.py",
+      "src/Stud/account/migrations/0010_alter_profile_role.py",
+      "src/Stud/account/migrations/0008_alter_profile_role.py",
+      "src/Stud/account/migrations/0002_alter_profile_birthday.py",
+      "src/Stud/account/migrations/__init__.py",
+      "src/Stud/account/migrations/0012_merge_20240813_0920.py",
+      "src/Stud/account/migrations/0014_alter_profile_role.py",
+      "src/Stud/account/migrations/0013_alter_profile_role.py",
+      "src/Stud/account/migrations/0005_alter_profile_role.py",
+      "src/Stud/account/migrations/0002_profile_role.py",
+      "src/Stud/account/migrations/0003_alter_profile_birthday.py",
+      "src/Stud/account/migrations/0011_alter_profile_role.py",
+      "src/Stud/account/migrations/0007_alter_profile_role.py",
+      "src/Stud/account/migrations/0001_initial.py",
+      "src/Stud/account/migrations/0009_alter_profile_role.py",
+      "src/Stud/account/migrations/0003_alter_profile_role.py"
+    ],
+    "src/Stud/account/management": [
+      "src/Stud/account/management/__init__.py"
+    ],
+    "src/Stud/account/management/commands": [
+      "src/Stud/account/management/commands/__init__.py",
+      "src/Stud/account/management/commands/create_profiles.py"
+    ],
+    "src/Stud/account/static/account/js": [
+      "src/Stud/account/static/account/js/controlWidget.js"
+    ],
+    "src/Stud/account/static/account/js/Login": [
+      "src/Stud/account/static/account/js/Login/script.js"
+    ],
+    "src/Stud/account/templates/account": [
+      "src/Stud/account/templates/account/index.html",
+      "src/Stud/account/templates/account/User.html",
+      "src/Stud/account/templates/account/404.html",
+      "src/Stud/account/templates/account/Login.html",
+      "src/Stud/account/templates/account/activation_failed.html",
+      "src/Stud/account/templates/account/Forgot.html",
+      "src/Stud/account/templates/account/email_confirmation.html",
+      "src/Stud/account/templates/account/signin.html",
+      "src/Stud/account/templates/account/signup.html"
+    ]
+  },
+  "file_types": {
+    "requirements.txt": 1,
+    "package.json": 20,
+    "py": 60,
+    "js": 156,
+    "html": 18,
+    "cpp": 1,
+    ".env": 1
+  },
+  "dependencies": {
+    "python": [
+      "asgiref",
+      "Django",
+      "dotenv-python",
+      "pillow",
+      "psycopg2-binary",
+      "python-dotenv",
+      "sqlparse",
+      "whitenoise"
+    ],
+    "javascript": [
+      "@vercel/postgres",
+      "@charmander/eslint-config-base",
+      "tap",
+      "array-shuffle",
+      "standard",
+      "tape",
+      "@types/node",
+      "pg-protocol",
+      "pg-types",
+      "undici-types",
+      "mocha",
+      "@types/tape",
+      "standard",
+      "tap-spec",
+      "tape",
+      "typescript",
+      "@charmander/eslint-config-base",
+      "@types/pg",
+      "@types/chai",
+      "@types/mocha",
+      "@types/node",
+      "chai",
+      "chunky",
+      "mocha",
+      "ts-node",
+      "typescript",
+      "standard",
+      "tape",
+      "standard",
+      "tape",
+      "tsd",
+      "node-gyp-build",
+      "mocha",
+      "node-gyp",
+      "prebuildify",
+      "prebuildify-cross",
+      "pg-int8",
+      "pg-numeric",
+      "postgres-array",
+      "postgres-bytea",
+      "postgres-date",
+      "postgres-interval",
+      "postgres-range",
+      "@types/node",
+      "codecov",
+      "nyc",
+      "open-cli",
+      "standard",
+      "tap-spec",
+      "tape",
+      "tsd",
+      "node-gyp-build",
+      "mocha",
+      "node-gyp",
+      "prebuildify",
+      "@neondatabase/serverless",
+      "bufferutil",
+      "utf-8-validate",
+      "ws",
+      "@changesets/cli",
+      "@edge-runtime/jest-environment",
+      "@edge-runtime/types",
+      "@types/jest",
+      "@types/node",
+      "@types/ws",
+      "eslint",
+      "jest",
+      "prettier",
+      "ts-jest",
+      "tsup",
+      "typescript",
+      "eslint-config-custom",
+      "tsconfig",
+      "standard",
+      "tape",
+      "benchmark",
+      "bufferutil",
+      "eslint",
+      "eslint-config-prettier",
+      "eslint-plugin-prettier",
+      "globals",
+      "mocha",
+      "nyc",
+      "prettier",
+      "utf-8-validate",
+      "obuf",
+      "concat-stream",
+      "standard",
+      "stream-to-promise",
+      "tape",
+      "tape-promise"
+    ]
+  }
+}

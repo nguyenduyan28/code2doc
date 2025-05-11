@@ -6,7 +6,7 @@ from readmegen_gemini import generate_readme_from_github_url, generate_class_dia
 from logzero import logger
 import streamlit_mermaid as stmd
 import requests
-from get_data_github import get_repo_data, get_repo_class, extract_code_structure
+from get_data_github import get_repo_data, get_repo_class, extract_code_structure, extract_for_readme
 from plantuml import PlantUML
 
 # Load API key từ .env
@@ -31,19 +31,16 @@ with col3:
     generate_usecase_diagram_button = st.button("Generate Use Case Diagram")
 
 with col4:
-   generate_dependency_graph_diagram_button = st.button("Generate Deployment Diagram") 
-
+    generate_dependency_graph_diagram_button = st.button("Generate Deployment Diagram")
 
 with col5:
     generate_sad_docs = st.button("Generate Software Architecture Document")
-
 
 @st.cache_resource()
 def get_uml_diagram_svg(uml_code):
     logger.info("Getting diagram from remote")
     url = PlantUML(url="http://www.plantuml.com/plantuml/img/")
     return url.get_url(uml_code)
-
 
 def clear_screen(key_name):
     keys_to_keep = {"url_input", key_name}
@@ -55,7 +52,7 @@ if generate_readme_button:
     if url_input.strip():
         try:
             clear_screen("github_output")
-            all_code_content = extract_code_structure(url_input)
+            all_code_content = extract_for_readme(url_input)
             read_me_all = generate_readme_from_github_url(all_code_content)
             st.session_state.github_output = read_me_all
         except Exception as e:
@@ -69,7 +66,7 @@ if generate_class_diagram_button:
             clear_screen("class_output")
             all_code_content = get_repo_class(url_input)
             class_content = generate_class_diagram(all_code_content)
-            st.session_state.class_output = (class_content)
+            st.session_state.class_output = class_content
         except Exception as e:
             st.error(f"Error: {str(e)}")
     else:
@@ -81,7 +78,7 @@ if generate_usecase_diagram_button:
             clear_screen("usecase_output")
             all_code_content = extract_code_structure(url_input)
             read_me_all = generate_usecase_diagram(all_code_content)
-            st.session_state.usecase_output= read_me_all
+            st.session_state.usecase_output = read_me_all
         except Exception as e:
             st.error(f"Error: {str(e)}")
     else:
@@ -93,12 +90,12 @@ if generate_dependency_graph_diagram_button:
             clear_screen("graph_output")
             all_code_content = extract_code_structure(url_input)
             read_me_all = generate_dependency_graph_diagram(all_code_content)
-            st.session_state.graph_output= read_me_all
+            st.session_state.graph_output = read_me_all
         except Exception as e:
             st.error(f"Error: {str(e)}")
     else:
         st.warning("Please enter a valid GitHub URL.")
-    
+
 if generate_sad_docs:
     if url_input.strip():
         try:
@@ -108,40 +105,43 @@ if generate_sad_docs:
             deploy_code = generate_dependency_graph_diagram(summary)
             class_code = generate_class_diagram(get_repo_class(url_input))
 
+            # Lấy URL cho các diagram
             usecase_url = get_uml_diagram_svg(usecase_code)
             deploy_url = get_uml_diagram_svg(deploy_code)
             class_url = get_uml_diagram_svg(class_code)
 
-            sad_doc = generate_sad(summary, usecase_url, deploy_url, class_url)
+            # Lưu các URL vào session_state
+            st.session_state.sad_usecase = usecase_url
+            st.session_state.sad_deploy = deploy_url
+            st.session_state.sad_class = class_url
 
+            # Tạo và lưu SAD
+            sad_doc = generate_sad(summary, usecase_url, deploy_url, class_url)
             st.session_state.sad_output = sad_doc
 
         except Exception as e:
             st.error(f"Error: {str(e)}")
-
-
-
 
 if "github_output" in st.session_state:
     st.subheader("Generated README:")
     st.markdown(st.session_state.github_output)
 
 if "class_output" in st.session_state:
-    st.subheader("Generated class diagram: ")
+    st.subheader("Generated Class Diagram:")
     img_url = get_uml_diagram_svg(st.session_state.class_output)
     img_response = requests.get(img_url)
     st.image(img_response.content)
     st.download_button('Download Image', img_response.content, file_name='class_diagram.png')
 
 if "usecase_output" in st.session_state:
-    st.subheader("Generated use case diagram: ")
+    st.subheader("Generated Use Case Diagram:")
     img_url = get_uml_diagram_svg(st.session_state.usecase_output)
     img_response = requests.get(img_url)
     st.image(img_response.content)
     st.download_button('Download Image', img_response.content, file_name='usecase.png')
 
 if "graph_output" in st.session_state:
-    st.subheader("Generated deployment diagram: ")
+    st.subheader("Generated Deployment Diagram:")
     img_url = get_uml_diagram_svg(st.session_state.graph_output)
     img_response = requests.get(img_url)
     st.image(img_response.content)
@@ -150,15 +150,5 @@ if "graph_output" in st.session_state:
 if "sad_output" in st.session_state:
     st.subheader("Generated SAD:")
     st.markdown(st.session_state.sad_output)
-
-    st.subheader("Use Case Diagram")
-    img_url = get_uml_diagram_svg(st.session_state.sad_usecase)
-    st.image(requests.get(img_url).content)
-
-    st.subheader("Deployment Diagram")
-    img_url = get_uml_diagram_svg(st.session_state.sad_deploy)
-    st.image(requests.get(img_url).content)
-
-    st.subheader("Class Diagram")
-    img_url = get_uml_diagram_svg(st.session_state.sad_class)
-    st.image(requests.get(img_url).content)
+    # Xóa phần hiển thị các hình dư thừa
+    # Chỉ giữ nội dung markdown của SAD

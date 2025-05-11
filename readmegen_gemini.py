@@ -35,7 +35,7 @@ You are a technical writer. Given this JSON summary of a Python codebase, genera
 Output requirements:
 - Start with a clear project title and short description.
 - Include a **Table of Contents** with links to sections (using markdown anchor links).
-- Add sections such as: `Installation`, `Usage`, `Functions` (with explanations and examples), and `License`.
+- Add sections such as: `Overview`, `Installation`, `Usage`, `Functions` (with explanations and examples), and `License`.
 - Use appropriate markdown headers (`#`, `##`, `###`).
 - Write in pure markdown — **do NOT** use triple quotes (`"""`) or markdown code fences like ```markdown.
 - Only return the markdown content. No extra explanation.

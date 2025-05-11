@@ -1,0 +1,328 @@
+[
+  {
+    "name": "Image",
+    "inherits": [],
+    "attributes": [],
+    "methods": [
+      "__str__"
+    ],
+    "dependencies": [
+      "models",
+      "Profile"
+    ]
+  },
+  {
+    "name": "RoomConfig",
+    "inherits": [
+      "AppConfig"
+    ],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "AppConfig"
+    ]
+  },
+  {
+    "name": "ImageForm",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "forms",
+      "Image"
+    ]
+  },
+  {
+    "name": "Meta",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "forms",
+      "Image"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "MainPageConfig",
+    "inherits": [
+      "AppConfig"
+    ],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "AppConfig"
+    ]
+  },
+  {
+    "name": "Profile",
+    "inherits": [],
+    "attributes": [],
+    "methods": [
+      "__str__"
+    ],
+    "dependencies": [
+      "User",
+      "models"
+    ]
+  },
+  {
+    "name": "AppTokenGenerator",
+    "inherits": [
+      "PasswordResetTokenGenerator"
+    ],
+    "attributes": [],
+    "methods": [
+      "_make_hash_value"
+    ],
+    "dependencies": [
+      "PasswordResetTokenGenerator"
+    ]
+  },
+  {
+    "name": "AccountConfig",
+    "inherits": [
+      "AppConfig"
+    ],
+    "attributes": [],
+    "methods": [
+      "ready"
+    ],
+    "dependencies": [
+      "AppConfig"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models",
+      "settings"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Migration",
+    "inherits": [],
+    "attributes": [],
+    "methods": [],
+    "dependencies": [
+      "migrations",
+      "models"
+    ]
+  },
+  {
+    "name": "Command",
+    "inherits": [
+      "BaseCommand"
+    ],
+    "attributes": [],
+    "methods": [
+      "handle"
+    ],
+    "dependencies": [
+      "User",
+      "BaseCommand",
+      "Profile"
+    ]
+  }
+]
