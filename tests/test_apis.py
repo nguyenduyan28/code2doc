@@ -23,7 +23,7 @@ def test_gemini_api():
     # Use genai to make a request to Gemini
     try:
         model = genai.GenerativeModel('gemini-2.0-flash')
-        response = model.generate_content("test query")
+        response = model.generate_content("Say Hello")
         assert response, "No response from Gemini API"
         assert response.text, "No text content found in Gemini response"
     except Exception as e:
@@ -35,11 +35,11 @@ def test_gpt_3_5_api():
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Hello!"}
+                {"role": "user", "content": "Say Hello"}
             ],
             max_tokens=50
         )
-        assert "choices" in response, "No choices found in GPT response"
+        assert "Hello" in response, "No choices found in GPT response."
     except Exception as e:
         pytest.fail(f"GPT-3.5 API test failed: {e}")
 
