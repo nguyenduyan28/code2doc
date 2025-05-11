@@ -17,8 +17,7 @@ def test_gemini_api():
     try:
         model = genai.GenerativeModel('gemini-2.0-flash')
         response = model.generate_content("Say Hello")
-        assert response, "No response from Gemini API"
-        assert response.text, "No text content found in Gemini response"
+        assert "hello" in response.text.lower(), f"Expected 'hello' in response, got: {response.text}"
     except Exception as e:
         pytest.fail(f"Gemini API test failed: {e}")
 
