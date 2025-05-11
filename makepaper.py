@@ -88,32 +88,35 @@ class PaperGenerator:
         print("Failed to generate valid text after max retries, returning last attempt")
         return text
     def generate_figures(self) -> Dict[str, str]:
-        """Generate all figures for the paper as SVG using Mermaid diagrams."""
+        """Generate all figures for the paper as PNG using Mermaid diagrams."""
         figure_paths = {}
         
         architecture_path = os.path.join(self.figures_dir, "architecture_diagram")
+        print(f"Generating architecture diagram at: {architecture_path}.png")
         generate_architecture_diagram(
             self.analysis_result["complexity"]["classes"],
-            architecture_path + ".svg",
+            architecture_path + ".png",
             self.openai_client,
             self.gpt_version
         )
         figure_paths["architecture"] = architecture_path + ".mmd"
         
         class_diagram_path = os.path.join(self.figures_dir, "class_diagram")
+        print(f"Generating class diagram at: {class_diagram_path}.png")
         generate_class_diagram(
             self.analysis_result["complexity"]["classes"],
             self.analysis_result["dependencies"],
-            class_diagram_path + ".svg",
+            class_diagram_path + ".png",
             self.openai_client,
             self.gpt_version
         )
         figure_paths["class_diagram"] = class_diagram_path + ".mmd"
         
         component_flow_path = os.path.join(self.figures_dir, "component_flow")
+        print(f"Generating component flow diagram at: {component_flow_path}.png")
         generate_component_flow_diagram(
             self.analysis_result["data_flow"],
-            component_flow_path + ".svg",
+            component_flow_path + ".png",
             self.openai_client,
             self.gpt_version
         )
@@ -480,19 +483,21 @@ class PaperGenerator:
         return paper
     
     def save_paper_markdown(self, paper: Dict[str, str]) -> str:
-        """Save the paper in Markdown format with embedded SVG images."""
+        """Save the paper in Markdown format with embedded PNG images, matching SAD structure."""
         markdown_path = os.path.join(self.output_dir, "paper.md")
         
-        architecture_svg = os.path.join("figures", "architecture_diagram.svg")
-        class_diagram_svg = os.path.join("figures", "class_diagram.svg")
-        component_flow_svg = os.path.join("figures", "component_flow.svg")
+        architecture_png = os.path.join("figures", "architecture_diagram.png")
+        class_diagram_png = os.path.join("figures", "class_diagram.png")
+        component_flow_png = os.path.join("figures", "component_flow.png")
         
-        architecture_svg = architecture_svg if os.path.exists(os.path.join(self.output_dir, architecture_svg)) else "figures/placeholder.svg"
-        class_diagram_svg = class_diagram_svg if os.path.exists(os.path.join(self.output_dir, class_diagram_svg)) else "figures/placeholder.svg"
-        component_flow_svg = component_flow_svg if os.path.exists(os.path.join(self.output_dir, component_flow_svg)) else "figures/placeholder.svg"
+        architecture_png = architecture_png if os.path.exists(os.path.join(self.output_dir, architecture_png)) else "figures/placeholder.png"
+        class_diagram_png = class_diagram_png if os.path.exists(os.path.join(self.output_dir, class_diagram_png)) else "figures/placeholder.png"
+        component_flow_png = component_flow_png if os.path.exists(os.path.join(self.output_dir, component_flow_png)) else "figures/placeholder.png"
         
         paper_name = self.paper_plan.get("paper_name", "Unknown Paper")
-        markdown_content = f"""# {paper['title']}
+        title = paper.get('title', 'Analysis of Transformer Implementation')
+        
+        markdown_content = f"""# {title}
 
 ## Abstract
 
@@ -509,21 +514,18 @@ class PaperGenerator:
 
 {paper['architecture']}
 
-### Figure 1: Architecture Diagram
-
-![Architecture diagram of the {paper_name} implementation]({architecture_svg})
+### 3.1 Architecture Diagram
+![Architecture Diagram]({architecture_png})
 
 *Figure 1: Architecture diagram of the {paper_name} implementation*
 
-### Figure 2: Class Diagram
-
-![Class diagram showing relationships between components]({class_diagram_svg})
+### 3.2 Class Diagram
+![Class Diagram]({class_diagram_png})
 
 *Figure 2: Class diagram showing relationships between components*
 
-### Figure 3: Component Flow Diagram
-
-![Component flow diagram illustrating data processing pipeline]({component_flow_svg})
+### 3.3 Component Flow Diagram
+![Component Flow Diagram]({component_flow_png})
 
 *Figure 3: Component flow diagram illustrating data processing pipeline*
 
@@ -531,7 +533,6 @@ class PaperGenerator:
 {paper['code_quality']}
 
 ## 5. Conclusion
-
 {paper['conclusion']}
 """
         
@@ -551,10 +552,9 @@ class PaperGenerator:
         text = text.replace('%', r'\%').replace('&', r'\&').replace('#', r'\#').replace('_', r'\_')
         return text
     def save_paper_tex(self, paper: Dict[str, str]) -> str:
-        """Save the paper in LaTeX format with embedded SVG images."""
+        """Save the paper in LaTeX format with embedded PNG images."""
         tex_path = os.path.join(self.output_dir, "paper.tex")
         
-        # Clean markdown formatting for LaTeX
         clean_introduction = self.clean_markdown_for_latex(paper['introduction'])
         clean_related_work = self.clean_markdown_for_latex(paper['related_work'])
         clean_architecture = self.clean_markdown_for_latex(paper['architecture'])
@@ -562,12 +562,10 @@ class PaperGenerator:
         clean_conclusion = self.clean_markdown_for_latex(paper['conclusion'])
         clean_abstract = self.clean_markdown_for_latex(paper['abstract'])
         
-        # Ensure title is not empty
         title = paper.get('title', 'Analysis of Transformer Implementation')
         if not title:
             title = 'Analysis of Transformer Implementation'
         
-        # Create LaTeX content
         tex_content = generate_tex_preamble(title)
         paper_name = self.paper_plan.get("paper_name", "Unknown Paper")
         tex_content += f"""
@@ -584,23 +582,26 @@ class PaperGenerator:
 \\section{{Architecture and Implementation}}
 {clean_architecture}
 
+\\subsection{{Architecture Diagram}}
 \\begin{{figure}}[htbp]
 \\centering
-\\includesvg[svgpath=figures/,width=0.9\\textwidth,keepaspectratio]{{architecture_diagram}}
+\\includegraphics[width=0.9\\textwidth,keepaspectratio]{{figures/architecture_diagram.png}}
 \\caption{{Architecture diagram of the {paper_name} implementation}}
 \\label{{fig:architecture}}
 \\end{{figure}}
 
+\\subsection{{Class Diagram}}
 \\begin{{figure}}[htbp]
 \\centering
-\\includesvg[svgpath=figures/,width=0.9\\textwidth,keepaspectratio]{{class_diagram}}
+\\includegraphics[width=0.9\\textwidth,keepaspectratio]{{figures/class_diagram.png}}
 \\caption{{Class diagram showing relationships between components}}
 \\label{{fig:class_diagram}}
 \\end{{figure}}
 
+\\subsection{{Component Flow Diagram}}
 \\begin{{figure}}[htbp]
 \\centering
-\\includesvg[svgpath=figures/,width=0.9\\textwidth,keepaspectratio]{{component_flow}}
+\\includegraphics[width=0.9\\textwidth,keepaspectratio]{{figures/component_flow.png}}
 \\caption{{Component flow diagram illustrating data processing pipeline}}
 \\label{{fig:component_flow}}
 \\end{{figure}}
@@ -614,30 +615,27 @@ class PaperGenerator:
 {generate_tex_closing()}
 """
         
-        # Save LaTeX file
         with open(tex_path, 'w', encoding='utf-8') as f:
             f.write(tex_content)
         
         print(f"Paper saved as LaTeX at {tex_path}")
         return tex_path
     def save_paper_pdf(self, tex_path: str) -> str:
-        """Convert LaTeX to PDF using pdflatex with SVG support."""
+        """Convert LaTeX to PDF using pdflatex with PNG support."""
         pdf_path = os.path.join(self.output_dir, "paper.pdf")
         try:
             original_dir = os.getcwd()
             os.chdir(self.output_dir)
-            # Run pdflatex twice with --shell-escape for SVG support
             result = subprocess.run(
-                ['pdflatex', '-shell-escape', '-interaction=nonstopmode', os.path.basename(tex_path)],
+                ['pdflatex', '-interaction=nonstopmode', os.path.basename(tex_path)],
                 capture_output=True,
                 text=True,
                 check=False
             )
             if result.returncode != 0:
                 print(f"pdflatex first run failed: {result.stderr}")
-            # Run again to resolve references
             result = subprocess.run(
-                ['pdflatex', '-shell-escape', '-interaction=nonstopmode', os.path.basename(tex_path)],
+                ['pdflatex', '-interaction=nonstopmode', os.path.basename(tex_path)],
                 capture_output=True,
                 text=True,
                 check=False
@@ -651,7 +649,7 @@ class PaperGenerator:
                 return None
         except Exception as e:
             print(f"Error generating PDF: {e}")
-            print("PDF generation failed. Please compile the LaTeX file manually with 'pdflatex --shell-escape paper.tex'")
+            print("PDF generation failed. Please compile the LaTeX file manually with 'pdflatex paper.tex'")
             return None
 def main():
     parser = argparse.ArgumentParser(description="Generate a research paper from code analysis results.")

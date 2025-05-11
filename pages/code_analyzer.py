@@ -38,28 +38,26 @@ if uploaded_file:
 
                 paper_md = output_dir / "paper.md"
                 if paper_md.exists():
+                     paper_md = output_dir / "paper.md"
+                if paper_md.exists():
                     st.subheader("📄 Generated Markdown Report")
                     markdown_content = paper_md.read_text()
                     lines = markdown_content.split('\n')
                     for line in lines:
-                        # Kiểm tra dòng chứa hình
-                        if line.startswith('![Architecture diagram') or line.startswith('![Class diagram') or line.startswith('![Component flow diagram'):
-                            # Lấy đường dẫn hình từ dòng Markdown
+                        if line.startswith('![Architecture Diagram') or line.startswith('![Class Diagram') or line.startswith('![Component Flow Diagram'):
                             img_match = re.search(r'\((.*?)\)', line)
                             if img_match:
-                                img_rel_path = img_match.group(1)  # Ví dụ: figures/component_flow.svg
+                                img_rel_path = img_match.group(1)
                                 img_path = output_dir / img_rel_path
                                 if img_path.exists():
                                     caption = line[line.find('[')+1:line.find(']')]
                                     st.image(str(img_path), caption=caption, width=400)
                                 else:
-                                    st.warning(f"Image {img_path} not found")
-                            st.markdown(line)
+                                    st.warning(f"Image {img_path} not found. Check if PNG was generated.")
+                                    st.markdown(line)  # Hiển thị dòng Markdown nếu không có hình
                         else:
                             st.markdown(line)
                     
-                    with open(paper_md, "rb") as f:
-                        st.download_button("📥 Download Markdown", f, file_name="report.md")
                 pdf_file = output_dir / "paper.pdf"
                 if pdf_file.exists():
                     with open(pdf_file, "rb") as f:

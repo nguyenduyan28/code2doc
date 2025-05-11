@@ -788,15 +788,13 @@ def format_markdown(text: str) -> str:
 # """
 
 def generate_tex_preamble(title: str) -> str:
-    """Generate LaTeX preamble for the paper with SVG support."""
-    # Escape special LaTeX characters in title
+    """Generate LaTeX preamble for the paper with PNG support."""
     title = title.replace('_', r'\_').replace('&', r'\&').replace('#', r'\#').replace('%', r'\%')
     return f"""
 \\documentclass[a4paper,11pt]{{article}}
 \\usepackage{{geometry}}
 \\geometry{{a4paper, margin=1in}}
 \\usepackage{{graphicx}}
-\\usepackage{{svg}}  % For SVG support
 \\usepackage{{amsmath}}
 \\usepackage{{amsfonts}}
 \\usepackage{{hyperref}}
