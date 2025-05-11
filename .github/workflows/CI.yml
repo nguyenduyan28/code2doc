@@ -23,4 +23,9 @@ jobs:
           pip install pytest requests python-dotenv google-generativeai openai
 
       - name: Run Tests
-        run: pytest tests/test_apis.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        
+        run: |
+          pytest tests/test_apis.py
