@@ -1,22 +1,15 @@
 import os
 import pytest
 import requests
-from dotenv import load_dotenv
 import google.generativeai as genai
 import openai
 
-# Load environment variables from .env file
-load_dotenv()
-
 # Fetch API keys from environment variables
-GEMINI_API_KEY = os.getenv("GEMINI_API")
-GPT_API_KEY = os.getenv("OPENAI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # Ensure variable name matches the workflow secret
+GPT_API_KEY = os.getenv("OPENAI_API_KEY")  # Ensure variable name matches the workflow secret
 
 # Configure Gemini API client
 genai.configure(api_key=GEMINI_API_KEY)
-
-# API URL for GPT-3.5 Turbo
-GPT_API_URL = "https://api.openai.com/v1/chat/completions"
 
 # Test function to check Gemini API
 def test_gemini_api():
