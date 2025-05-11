@@ -39,7 +39,7 @@ def test_gpt_3_5_api():
             ],
             max_tokens=50
         )
-        assert "Hello" in response, "No choices found in GPT response."
+        assert "choices" in response, "No choices found in GPT response"
     except Exception as e:
         pytest.fail(f"GPT-3.5 API test failed: {e}")
 
