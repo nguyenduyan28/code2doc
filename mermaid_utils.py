@@ -69,7 +69,8 @@ def generate_mermaid_architecture_diagram(classes: Dict[str, Any], openai_client
             messages=[
                 {"role": "system", "content": "You are an expert software architect who creates clear, accurate Mermaid diagrams."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            temperature = 0.1
         )
         
         # Extract Mermaid code from response
@@ -148,7 +149,8 @@ def generate_mermaid_class_diagram(classes: Dict[str, Any], dependencies: Dict[s
             messages=[
                 {"role": "system", "content": "You are an expert software architect who creates detailed, accurate Mermaid class diagrams."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            temperature = 0.1            
         )
         
         # Extract Mermaid code from response
@@ -218,7 +220,8 @@ def generate_mermaid_component_flow_diagram(data_flow: Dict[str, Any],
             messages=[
                 {"role": "system", "content": "You are an expert software architect who creates clear, accurate Mermaid flowchart diagrams."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            temperature = 0.1
         )
         
         # Extract Mermaid code from response

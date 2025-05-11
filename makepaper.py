@@ -12,7 +12,6 @@ generating text content, Mermaid diagrams, and formatting the final document.
 #API key cua guardrails: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnb29nbGUtb2F1dGgyfDEwODIyMTg5NDY4MDg1OTc4MDM2MSIsImFwaUtleUlkIjoiN2M2OGI4ZTQtMmNjZi00MWVkLWJhYzAtNjAwODliYjc3ZGE0Iiwic2NvcGUiOiJyZWFkOnBhY2thZ2VzIiwicGVybWlzc2lvbnMiOltdLCJpYXQiOjE3NDY2MTU0OTksImV4cCI6NDkwMDIxNTQ5OX0.p_XQ7JAMC9qRhYKG0bXsgtBSN0d3sXyD6HZmUWPrdR0
 #guardrails hub install hub://guardrails/toxic_language
 #guardrails hub install hub://guardrails/profanity_free
-#guardrails hub install hub://guardrails/gibberish_text
 #guardrails hub install hub://guardrails/detect_pii
 #guardrails hub install hub://tryolabs/restricttotopic
 
@@ -42,7 +41,6 @@ from guardrails import Guard
 from guardrails.hub import (
     ToxicLanguage,
     ProfanityFree,
-    GibberishText,
     DetectPII,
     RestrictToTopic 
 )
@@ -66,7 +64,6 @@ class PaperGenerator:
         self.safety_guard = Guard().use_many(
             ToxicLanguage(validation_method="full", on_fail="exception", threshold=0.5),
             ProfanityFree(validation_method="full", on_fail="exception", threshold=0.5),
-            #GibberishText(validation_method="full", on_fail="exception", threshold=0.5),
             DetectPII(["EMAIL_ADDRESS", "PHONE_NUMBER"], "exception"),
             RestrictToTopic(valid_topics=[paper_name], disable_classifier=True, disable_llm=False, on_fail="exception")
         )
