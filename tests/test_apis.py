@@ -24,14 +24,13 @@ def test_gemini_api():
 
 def test_gpt_3_5_api():
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Say Hello"}
-            ],
-            max_tokens=50
-        )
+        response = openai.OpenAI(api_key=GPT_API_KEY).chat.completions.create(
+        model="gpt-3.5-turbo", 
+        messages=[ 
+           {"role": "system", "content": ""}, 
+           {"role": "user", "content": "Say hello"} 
+        ]
+     )
         assert "choices" in response, "No choices found in GPT response"
     except Exception as e:
         pytest.fail(f"GPT-3.5 API test failed: {e}")
